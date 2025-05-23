@@ -1,0 +1,34 @@
+{
+  "name": "pandora",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm vite",
+    "build": "pnpm vite build"
+  },
+  "keywords": [
+    "developer",
+    "frontend",
+    "website",
+    "dev tool",
+    "browser",
+    "debugging",
+    "floating tool"
+  ],
+  "author": "madeofzero",
+  "license": "MIT",
+  "description": "Pandora is a lightweight, extensible floating dev panel that sticks to the bottom of your screen and gives you quick access to the tools you wish your framework shipped with.",
+  "dependencies": {
+    "@tailwindcss/vite": "4.1.7",
+    "lit": "3.3.0",
+    "tailwindcss": "4.1.7",
+    "vite-plugin-dts": "4.5.4",
+    "vite-tsconfig-paths": "5.1.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "2.0.0",
+    "ts-node": "10.9.2",
+    "vite": "6.3.4"
+  }
+}

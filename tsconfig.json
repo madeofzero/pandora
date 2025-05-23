@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,        // Supports JSON imports
+    "forceConsistentCasingInFileNames": true, // Avoids casing issues
+    "isolatedModules": true,          // Ensures independent module transpilation
+    "incremental": true,              // Faster rebuilds
+    "paths": {
+      "@/*": ["./src/*"]             // Path aliases (adjust as needed)
+    },
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "pandora",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+    "jsx": "preserve" // Required for JSX compatibility (optional for Lit)
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "pandora"]
+}
