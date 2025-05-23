@@ -19,7 +19,7 @@ export default defineConfig({
   plugins: [tsconfigPaths(), dts({ rollupTypes: true }), tailwindcss()],
   build: {
     target: "es2015",
-    outDir: `../dist/@${version}`,
+    outDir: `../scripts`,
     lib: {
       entry: {
         "pandora-box": resolve(__dirname, "src/index.ts"),
@@ -29,7 +29,7 @@ export default defineConfig({
     rollupOptions: {
       external: ["vue"],
       output: {
-        entryFileNames: `[name].js`,
+        entryFileNames: ({ name }) => `${name}/${name}@${version}.js`,
         globals: {
           vue: "Vue",
         },
