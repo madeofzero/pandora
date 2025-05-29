@@ -1,4 +1,4 @@
-import { TW } from "@/shared/tailwindMixin";
+import { TW } from "@/utils/tailwindMixin";
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
