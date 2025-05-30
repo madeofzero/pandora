@@ -10,9 +10,16 @@ import "./plugins/pandora-installer";
 type PandoraPluginType = {
   id: string;
   label: string;
-  component: string;
   icon: string;
-  [attr: string]: string;
+  element: string;
+  hooks?: PluginHooks;
+  [attr: string]: any;
+};
+
+type PluginHooks = {
+  onReady?: () => void;
+  onMount?: (element: Element) => void;
+  onUnmount?: () => void;
 };
 
 const TwLitElement = TW(LitElement);
@@ -21,7 +28,7 @@ const serverURL = import.meta.env.VITE_BACKEND_API_URL;
 
 @customElement("pandora-box")
 export class PandorasBox extends TwLitElement {
-  @state() activePlugins: PandoraPluginType | null = null;
+  @state() activePlugin: PandoraPluginType | null = null;
   static plugins: Array<PandoraPluginType> = [];
 
   @property({ type: String, attribute: "site-id" }) siteId = "";
@@ -54,6 +61,14 @@ export class PandorasBox extends TwLitElement {
     if (!PandorasBox.plugins.find((plugin) => plugin.id === newPlugin.id)) {
       PandorasBox.plugins.push(newPlugin);
       const rootElm = document.querySelector("pandora-box") as any;
+
+      if (newPlugin.hooks) {
+        const { onReady } = newPlugin.hooks;
+        if (onReady) {
+          onReady();
+        }
+      }
+
       rootElm.requestUpdate();
     }
   }
@@ -157,34 +172,55 @@ export class PandorasBox extends TwLitElement {
 
   private loadPluginById(id: string) {
     const selectedPlugin = PandorasBox.plugins.find(
-      (activePlugins) => activePlugins.id === id
+      (activePlugin) => activePlugin.id === id
     );
 
     const container = this.renderRoot.querySelector("#active-panel");
 
     if (!container || !selectedPlugin) return;
 
-    if (this.activePlugins) {
-      container.innerHTML = "";
-      container.classList.remove("mt-2");
-      if (selectedPlugin.id === this.activePlugins?.id) {
-        this.activePlugins = null;
-        return null;
+    const { element, icon, ...attributes } = selectedPlugin;
+
+    const template = document.createElement("template");
+    template.innerHTML = element.trim();
+
+    const newPluginEle = template.content.firstChild;
+
+    if (newPluginEle instanceof Element) {
+      Object.entries(attributes).forEach(([key, value]) => {
+        newPluginEle.setAttribute(key, value);
+      });
+
+      newPluginEle.setAttribute("site-id", this.siteId);
+      container.classList.add("mt-2");
+      container.appendChild(newPluginEle);
+
+      // Unmount existing element
+      if (this.activePlugin) {
+        container.innerHTML = "";
+        container.classList.remove("mt-2");
+        if (selectedPlugin.id === this.activePlugin?.id) {
+          if (this.activePlugin?.hooks) {
+            const { onUnmount } = this.activePlugin.hooks;
+            if (onUnmount) {
+              onUnmount();
+            }
+          }
+          this.activePlugin = null;
+          return null;
+        }
       }
+
+      if (selectedPlugin.hooks) {
+        const { onMount } = selectedPlugin.hooks;
+
+        if (onMount) {
+          onMount(newPluginEle);
+        }
+      }
+
+      this.activePlugin = selectedPlugin;
     }
-
-    const { component, icon, ...attributes } = selectedPlugin;
-    const newPluginEle = document.createElement(component);
-
-    Object.entries(attributes).forEach(([key, value]) => {
-      newPluginEle.setAttribute(key, value);
-    });
-
-    newPluginEle.setAttribute("site-id", this.siteId);
-
-    container.classList.add("mt-2");
-    container.appendChild(newPluginEle);
-    this.activePlugins = selectedPlugin;
   }
 
   render() {
@@ -196,11 +232,11 @@ export class PandorasBox extends TwLitElement {
       >
         <div
           id="active-panel"
-          key="${this.activePlugins?.id || "no-plugins"}"
-          class="border border-solid  bg-black/60 text-white backdrop-blur-xl rounded-xl transition-all ease-out translate-x-0 ${this
-            .activePlugins
+          key="${this.activePlugin?.id || "no-plugins"}"
+          class="border border-solid bg-black/60 text-white backdrop-blur-xl rounded-xl transition-all ease-out translate-x-0 ${this
+            .activePlugin
             ? "translate-y-0 border-white/15 p-4"
-            : "translate-y-10"}"
+            : "translate-y-10 border-transparent"}"
         ></div>
         <div
           class="bg-gradient-to-b from-0% to-100% from-[#0F0F0F] to-black rounded-xl px-4 py-4 text-white border border-white/15 border-solid transition-all inline-flex"
@@ -221,7 +257,7 @@ export class PandorasBox extends TwLitElement {
                 : ""}"
             >
               ${PandorasBox.plugins.map((plugin) => {
-                const isSelected = this.activePlugins?.id === plugin.id;
+                const isSelected = this.activePlugin?.id === plugin.id;
                 const isLinkComponent = plugin.component === "pandora-link";
 
                 return html`
