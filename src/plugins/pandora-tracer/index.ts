@@ -1,8 +1,7 @@
-import { TW } from "@/utils/tailwindMixin";
-import { LitElement, html } from "lit";
+import { PANDORA_EVENTS } from "@/types/pandora-event.type";
+import { TwLitElement } from "@/utils/tailwindMixin";
+import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
-
-const TwLitElement = TW(LitElement);
 
 @customElement("pandora-tracer")
 export class ErrorCounter extends TwLitElement {
@@ -32,7 +31,7 @@ export class ErrorCounter extends TwLitElement {
   private incrementCount() {
     this.count += 1;
     document.dispatchEvent(
-      new CustomEvent("pandora::update-plugin-icon", {
+      new CustomEvent(PANDORA_EVENTS.plugin.icon.update, {
         detail: {
           id: "pandora-tracer",
           icon: `<span>${this.count}</span>`,
@@ -42,7 +41,7 @@ export class ErrorCounter extends TwLitElement {
     );
   }
 
-  protected render() {
+  render() {
     return html`<div class="counter">Console Errors: ${this.count}</div>`;
   }
 }

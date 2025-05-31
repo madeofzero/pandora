@@ -1,4 +1,4 @@
-import { adoptStyles, type LitElement, unsafeCSS } from "lit";
+import { adoptStyles, LitElement, unsafeCSS } from "lit";
 import style from "../styles/tailwind.global.css?inline";
 
 declare global {
@@ -14,3 +14,5 @@ export const TW = <T extends LitMixin>(superClass: T): T =>
       if (this.shadowRoot) adoptStyles(this.shadowRoot, [stylesheet]);
     }
   };
+
+export const TwLitElement = TW(LitElement);

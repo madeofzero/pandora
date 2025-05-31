@@ -1,6 +1,6 @@
 {
   "name": "pandora",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
@@ -20,6 +20,7 @@
   "license": "MIT",
   "description": "Pandora is a lightweight, extensible floating dev panel that sticks to the bottom of your screen and gives you quick access to the tools you wish your framework shipped with.",
   "dependencies": {
+    "@lit-labs/signals": "^0.1.2",
     "@tailwindcss/vite": "4.1.7",
     "lit": "3.3.0",
     "tailwindcss": "4.1.7",
