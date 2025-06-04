@@ -25,7 +25,7 @@ customElements.whenDefined("pandora-box").then(() => {
     hooks: {
       onReady: () => log("Pandora Dummy is initialized!"),
       onMount: (el: Element) => log("Pandora Dummy is mounted!"),
-      onUnmount: () => log("Pandora Dummy is destroyed"),
+      onUnmount: (element: Element) => log("Pandora Dummy is destroyed"),
     },
   });
 });

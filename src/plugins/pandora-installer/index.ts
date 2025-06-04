@@ -36,8 +36,9 @@ customElements.whenDefined("pandora-box").then(() => {
     element: "<pandora-installer></pandora-installer>",
     hooks: {
       onReady: () => log("Installer is initialized!"),
-      onMount: (el: Element) => log("Installer is mounted!"),
-      onUnmount: () => log("Installer is destroyed"),
+      onMount: (container: Element) => log("Installer is mounted!"),
+      onUnmount: (container: Element, pluginElement: Element) =>
+        log("Installer is destroyed"),
     },
   });
 });

@@ -140,30 +140,29 @@ export class PandorasBox extends TwLitElement {
         newPluginEle.setAttribute(key, value);
       });
 
-      container.classList.add("mt-2");
-      container.appendChild(newPluginEle);
-
       // Unmount existing element
       if (this.activePlugin) {
-        container.innerHTML = "";
-        container.classList.remove("mt-2");
-        if (selectedPlugin.id === this.activePlugin?.id) {
-          if (this.activePlugin?.hooks) {
-            const { onUnmount } = this.activePlugin.hooks;
-            if (onUnmount) {
-              onUnmount();
-            }
+        if (this.activePlugin?.hooks) {
+          const { onUnmount } = this.activePlugin.hooks;
+          if (onUnmount) {
+            onUnmount(container);
           }
+        }
+        container.innerHTML = "";
+
+        if (selectedPlugin.id === this.activePlugin?.id) {
           this.activePlugin = null;
           return null;
         }
       }
 
+      container.appendChild(newPluginEle);
+
       if (selectedPlugin.hooks) {
         const { onMount } = selectedPlugin.hooks;
 
         if (onMount) {
-          onMount(newPluginEle);
+          onMount(container, newPluginEle);
         }
       }
 

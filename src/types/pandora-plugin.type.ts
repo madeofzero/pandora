@@ -9,6 +9,6 @@ export type PandoraPluginType = {
 
 export type PandoraPluginHooks = {
   onReady?: () => void;
-  onMount?: (element: Element) => void;
-  onUnmount?: () => void;
+  onMount?: (container: Element, pluginElement: Element) => void;
+  onUnmount?: (container: Element) => void;
 };
