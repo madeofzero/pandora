@@ -1,7 +1,7 @@
 import { PANDORA_ELEMENT_IDENTIFIER } from "@/types/pandora-plugin.type";
 import { PandorasBox } from "@/plugins/pandora-box";
-import { PandoraNote } from "@/plugins/pandora-installer/pandora-note";
-import { PandoraLink } from "@/plugins/pandora-installer/pandora-link";
+import { PandoraNote } from "@/plugins/pandora-note";
+import { PandoraLink } from "@/plugins/pandora-link";
 import { PandoraInstaller, PandoraTracer } from "@/plugins";
 
 declare global {

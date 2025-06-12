@@ -2,10 +2,6 @@ import { TwLitElement } from "@/utils/tailwindMixin";
 import { html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { log } from "@/utils/logger";
-
-// Default enabled plugins
-import "./pandora-link";
-import "./pandora-note";
 import { PANDORA_ELEMENT_IDENTIFIER } from "@/types/pandora-plugin.type";
 
 @customElement("pandora-installer")
