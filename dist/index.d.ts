@@ -11,6 +11,23 @@ export declare class PandoraInstaller extends TwLitElement {
     render(): TemplateResult<1>;
 }
 
+export declare class PandoraLink extends TwLitElement {
+    link: string | undefined;
+    connectedCallback(): void;
+    private openLink;
+    private handleOnCreateLinkClick;
+    static Icon(plugin: PandoraPluginType): string;
+    render(): TemplateResult<1>;
+}
+
+export declare class PandoraNote extends TwLitElement {
+    heading: string | undefined;
+    note: string | undefined;
+    private handleOnCreateNoteClick;
+    static Icon(plugin: PandoraPluginType): string;
+    render(): TemplateResult<1>;
+}
+
 declare type PandoraPluginHooks = {
     onReady?: () => void;
     onMount?: (container: Element, pluginElement: Element) => void;
