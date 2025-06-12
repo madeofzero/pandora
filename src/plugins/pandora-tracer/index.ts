@@ -1,10 +1,11 @@
 import { PANDORA_EVENTS } from "@/types/pandora-event.type";
+import { PANDORA_ELEMENT_IDENTIFIER } from "@/types/pandora-plugin.type";
 import { TwLitElement } from "@/utils/tailwindMixin";
 import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
 @customElement("pandora-tracer")
-export class ErrorCounter extends TwLitElement {
+export class PandoraTracer extends TwLitElement {
   @state()
   private count = 0;
 
@@ -42,13 +43,13 @@ export class ErrorCounter extends TwLitElement {
   }
 
   render() {
-    return html`<div class="counter">Console Errors: ${this.count}</div>`;
+    return html`<div class="text-white">Console Errors: ${this.count}</div>`;
   }
 }
 
 // Register the plugin directly using the static method
-customElements.whenDefined("pandora-box").then(() => {
-  (customElements.get("pandora-box") as any).registerPlugin({
+customElements.whenDefined(PANDORA_ELEMENT_IDENTIFIER).then(() => {
+  (customElements.get(PANDORA_ELEMENT_IDENTIFIER) as any).registerPlugin({
     id: "pandora-tracer",
     label: "Tracer",
     element: "<pandora-tracer />",

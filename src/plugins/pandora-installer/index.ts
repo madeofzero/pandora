@@ -6,6 +6,7 @@ import { log } from "@/utils/logger";
 // Default enabled plugins
 import "./pandora-link";
 import "./pandora-note";
+import { PANDORA_ELEMENT_IDENTIFIER } from "@/types/pandora-plugin.type";
 
 @customElement("pandora-installer")
 export class PandoraInstaller extends TwLitElement {
@@ -28,8 +29,8 @@ export class PandoraInstaller extends TwLitElement {
 }
 
 // Register the plugin directly using the static method
-customElements.whenDefined("pandora-box").then(() => {
-  (customElements.get("pandora-box") as any).registerPlugin({
+customElements.whenDefined(PANDORA_ELEMENT_IDENTIFIER).then(() => {
+  (customElements.get(PANDORA_ELEMENT_IDENTIFIER) as any).registerPlugin({
     id: "pandora-installer",
     type: "pandora-installer",
     label: "Installer Plugin",

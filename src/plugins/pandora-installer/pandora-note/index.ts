@@ -27,8 +27,7 @@ export class PandoraNote extends TwLitElement {
         },
       };
 
-      const result = await (await createPlugin(data)).json();
-
+      const result = await createPlugin(data);
       document.dispatchEvent(
         new CustomEvent(PANDORA_EVENTS.plugin.register, {
           detail: result,

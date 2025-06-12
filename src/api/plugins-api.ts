@@ -2,6 +2,9 @@
 import { SERVER_URL } from "@/api";
 
 export async function fetchPlugins(siteId: string) {
+  if (siteId.length <= 0) {
+    return [];
+  }
   const searchParams = new URLSearchParams();
   searchParams.set("filter", `property.id="${siteId}"`);
 
@@ -20,12 +23,21 @@ export async function fetchPlugins(siteId: string) {
   return await result.json();
 }
 
-export async function createPlugin(body: any) {
-  return await fetch(`${SERVER_URL}/api/collections/plugins/records`, {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+export async function createPlugin(body: {
+  property: string | null;
+  type: string;
+  attributes: Record<string, string>;
+}) {
+  if (body.property) {
+    return (
+      await fetch(`${SERVER_URL}/api/collections/plugins/records`, {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+    ).json();
+  }
+  return { ...body, id: Math.random() };
 }

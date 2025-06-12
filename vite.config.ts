@@ -1,39 +1,70 @@
 import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import dts from "vite-plugin-dts";
-
-import { readFileSync } from "fs";
+import tailwindcss from "@tailwindcss/vite";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import babel from "@rollup/plugin-babel";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const pkg = JSON.parse(
-  readFileSync(resolve(__dirname, "package.json"), "utf-8")
-);
-const version = pkg.version;
+function addJsExtensionPlugin() {
+  return {
+    name: "add-js-extension",
+    generateBundle(_, bundle) {
+      for (const file of Object.values(bundle) as any) {
+        if (file.type === "chunk") {
+          // Replace import statements without extensions with .js
+          file.code = file.code.replace(
+            /import(\s+[^'"]+from\s+['"])([^'".]+)(?<!\.js)['"]/g,
+            (match, importPart, path) => {
+              if (path.startsWith("./") || path.startsWith("../")) {
+                return `${importPart}${path}.js"`;
+              }
+              return match;
+            }
+          );
+        }
+      }
+    },
+  };
+}
 
-export default defineConfig({
-  root: "src",
-  plugins: [tsconfigPaths(), dts({ rollupTypes: true }), tailwindcss()],
-  build: {
-    target: "es2015",
-    outDir: `../dist`,
-    lib: {
-      entry: {
-        "pandora-box": resolve(__dirname, "src/index.ts"),
+export default defineConfig(({ command }) => {
+  const isBuild = command === "build";
+
+  return {
+    root: ".",
+    plugins: [tsconfigPaths(), dts({ rollupTypes: true }), tailwindcss()],
+    build: {
+      sourcemap: true,
+      target: "es2021",
+      outDir: "dist",
+      lib: {
+        entry: resolve(__dirname, "src/index.ts"),
+        name: "PandoraBox",
+        fileName: () => `index.js`,
+        formats: ["es"],
       },
-      formats: ["es"],
-    },
-    rollupOptions: {
-      external: ["vue"],
-      output: {
-        entryFileNames: ({ name }) => `${name}/${name}@${version}.js`,
-        globals: {
-          vue: "Vue",
-        },
+      rollupOptions: {
+        plugins: [
+          nodeResolve({
+            extensions: [".js", ".ts"],
+          }),
+          // Babel only for build step (not for dev server)
+          isBuild &&
+            babel({
+              babelHelpers: "bundled",
+              extensions: [".ts", ".tsx", ".js", ".jsx"],
+              include: ["src/**/*"],
+            }),
+          addJsExtensionPlugin(),
+        ].filter(Boolean),
       },
     },
-  },
+    server: {
+      open: "/dev.html",
+    },
+  };
 });

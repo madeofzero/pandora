@@ -1,3 +1,4 @@
+import { PANDORA_ELEMENT_IDENTIFIER } from "@/types/pandora-plugin.type";
 import { log } from "@/utils/logger";
 
 function clickable() {
@@ -6,8 +7,8 @@ function clickable() {
 }
 
 // Register the plugin directly using the static method
-customElements.whenDefined("pandora-box").then(() => {
-  (customElements.get("pandora-box") as any).registerPlugin({
+customElements.whenDefined(PANDORA_ELEMENT_IDENTIFIER).then(() => {
+  (customElements.get(PANDORA_ELEMENT_IDENTIFIER) as any).registerPlugin({
     id: "pandora-dummy2",
     type: "pandora-dummy2",
     icon: `✅`,

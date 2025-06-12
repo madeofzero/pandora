@@ -12,3 +12,5 @@ export type PandoraPluginHooks = {
   onMount?: (container: Element, pluginElement: Element) => void;
   onUnmount?: (container: Element) => void;
 };
+
+export const PANDORA_ELEMENT_IDENTIFIER = "pandora-devtool";

@@ -1,6 +1,16 @@
 import { LitElement } from 'lit';
 import { TemplateResult } from 'lit';
 
+export declare class PandoraAppLogo extends TwLitElement {
+    classes: string;
+    render(): TemplateResult<1>;
+}
+
+export declare class PandoraInstaller extends TwLitElement {
+    static Icon(): string;
+    render(): TemplateResult<1>;
+}
+
 declare type PandoraPluginHooks = {
     onReady?: () => void;
     onMount?: (container: Element, pluginElement: Element) => void;
@@ -28,6 +38,16 @@ export declare class PandorasBox extends TwLitElement {
     private deletePluginIcon;
     private updatePluginIconImage;
     private loadPluginById;
+    render(): TemplateResult<1>;
+}
+
+export declare class PandoraTracer extends TwLitElement {
+    private count;
+    private originalConsoleError;
+    constructor();
+    private overrideConsoleError;
+    private attachGlobalListeners;
+    private incrementCount;
     render(): TemplateResult<1>;
 }
 
