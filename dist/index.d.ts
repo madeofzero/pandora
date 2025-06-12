@@ -3,8 +3,8 @@ import { TemplateResult } from 'lit';
 
 declare type PandoraPluginHooks = {
     onReady?: () => void;
-    onMount?: (element: Element) => void;
-    onUnmount?: () => void;
+    onMount?: (container: Element, pluginElement: Element) => void;
+    onUnmount?: (container: Element) => void;
 };
 
 declare type PandoraPluginType = {

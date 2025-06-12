@@ -19,7 +19,7 @@ export default defineConfig({
   plugins: [tsconfigPaths(), dts({ rollupTypes: true }), tailwindcss()],
   build: {
     target: "es2015",
-    outDir: `../scripts`,
+    outDir: `../dist`,
     lib: {
       entry: {
         "pandora-box": resolve(__dirname, "src/index.ts"),
