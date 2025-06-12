@@ -565,107 +565,50 @@ function H(e) {
 function qt(e) {
   return H({ ...e, state: !0, attribute: !1 });
 }
-var Me = Object.defineProperty, He = Object.getOwnPropertyDescriptor, Gt = (e, t, r, i) => {
-  for (var n = i > 1 ? void 0 : i ? He(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
-  return i && n && Me(t, r, n), n;
-};
-let ht = class extends k {
-  constructor() {
-    super(...arguments), this.classes = "size-10";
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+const Me = { CHILD: 2 }, He = (e) => (...t) => ({ _$litDirective$: e, values: t });
+class Re {
+  constructor(t) {
   }
-  render() {
-    const e = "#3EA8FF";
-    return $`
-      <svg
-        class="${this.classes}"
-        viewBox="0 0 94 14"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0.579102 7.00818C0.579102 3.41833 3.48974 0.508179 7.0802 0.508179C10.6707 0.508179 13.5813 3.41833 13.5813 7.00818C13.5813 10.598 10.6707 13.5082 7.0802 13.5082L0.579102 13.5082L0.579102 7.00818Z"
-          fill="url(#paint0_linear_61_44)"
-        />
-        <path
-          d="M91.4494 9.29318H88.8294L88.4094 10.5332H86.6194L89.1594 3.51318H91.1394L93.6794 10.5332H91.8694L91.4494 9.29318ZM91.0094 7.97318L90.1394 5.40318L89.2794 7.97318H91.0094Z"
-          fill=${e}
-        />
-        <path
-          d="M80.0168 10.5332L78.5568 7.88318H78.1468V10.5332H76.4368V3.51318H79.3068C79.8601 3.51318 80.3301 3.60985 80.7168 3.80318C81.1101 3.99652 81.4034 4.26318 81.5968 4.60318C81.7901 4.93652 81.8868 5.30985 81.8868 5.72318C81.8868 6.18985 81.7534 6.60652 81.4868 6.97318C81.2268 7.33985 80.8401 7.59985 80.3268 7.75318L81.9468 10.5332H80.0168ZM78.1468 6.67318H79.2068C79.5201 6.67318 79.7534 6.59652 79.9068 6.44318C80.0668 6.28985 80.1468 6.07318 80.1468 5.79318C80.1468 5.52652 80.0668 5.31652 79.9068 5.16318C79.7534 5.00985 79.5201 4.93318 79.2068 4.93318H78.1468V6.67318Z"
-          fill=${e}
-        />
-        <path
-          d="M67.7763 10.6032C67.1163 10.6032 66.5096 10.4499 65.9563 10.1432C65.4096 9.83654 64.9729 9.40987 64.6463 8.86321C64.3263 8.30987 64.1663 7.68987 64.1663 7.00321C64.1663 6.31654 64.3263 5.69987 64.6463 5.15321C64.9729 4.60654 65.4096 4.17987 65.9563 3.87321C66.5096 3.56654 67.1163 3.41321 67.7763 3.41321C68.4363 3.41321 69.0396 3.56654 69.5863 3.87321C70.1396 4.17987 70.5729 4.60654 70.8863 5.15321C71.2063 5.69987 71.3663 6.31654 71.3663 7.00321C71.3663 7.68987 71.2063 8.30987 70.8863 8.86321C70.5663 9.40987 70.1329 9.83654 69.5863 10.1432C69.0396 10.4499 68.4363 10.6032 67.7763 10.6032ZM67.7763 9.04321C68.3363 9.04321 68.7829 8.85654 69.1163 8.48321C69.4563 8.10987 69.6263 7.61654 69.6263 7.00321C69.6263 6.38321 69.4563 5.88987 69.1163 5.52321C68.7829 5.14987 68.3363 4.96321 67.7763 4.96321C67.2096 4.96321 66.7563 5.14654 66.4163 5.51321C66.0829 5.87987 65.9163 6.37654 65.9163 7.00321C65.9163 7.62321 66.0829 8.11987 66.4163 8.49321C66.7563 8.85987 67.2096 9.04321 67.7763 9.04321Z"
-          fill=${e}
-        />
-        <path
-          d="M55.7015 3.51318C56.4415 3.51318 57.0882 3.65985 57.6415 3.95318C58.1949 4.24652 58.6215 4.65985 58.9215 5.19318C59.2282 5.71985 59.3815 6.32985 59.3815 7.02318C59.3815 7.70985 59.2282 8.31985 58.9215 8.85318C58.6215 9.38652 58.1915 9.79985 57.6315 10.0932C57.0782 10.3865 56.4349 10.5332 55.7015 10.5332H53.0715V3.51318H55.7015ZM55.5915 9.05318C56.2382 9.05318 56.7415 8.87652 57.1015 8.52318C57.4615 8.16985 57.6415 7.66985 57.6415 7.02318C57.6415 6.37652 57.4615 5.87318 57.1015 5.51318C56.7415 5.15318 56.2382 4.97318 55.5915 4.97318H54.7815V9.05318H55.5915Z"
-          fill=${e}
-        />
-        <path
-          d="M47.7129 10.5332H46.0029L43.1429 6.20318V10.5332H41.4329V3.51318H43.1429L46.0029 7.86318V3.51318H47.7129V10.5332Z"
-          fill=${e}
-        />
-        <path
-          d="M34.3107 9.29318H31.6907L31.2707 10.5332H29.4807L32.0207 3.51318H34.0007L36.5407 10.5332H34.7307L34.3107 9.29318ZM33.8707 7.97318L33.0007 5.40318L32.1407 7.97318H33.8707Z"
-          fill=${e}
-        />
-        <path
-          d="M24.9313 5.77318C24.9313 6.17985 24.838 6.55318 24.6513 6.89318C24.4646 7.22652 24.178 7.49652 23.7913 7.70318C23.4046 7.90985 22.9246 8.01318 22.3513 8.01318H21.2913V10.5332H19.5813V3.51318H22.3513C22.9113 3.51318 23.3846 3.60985 23.7713 3.80318C24.158 3.99652 24.448 4.26318 24.6413 4.60318C24.8346 4.94318 24.9313 5.33318 24.9313 5.77318ZM22.2213 6.65318C22.548 6.65318 22.7913 6.57652 22.9513 6.42318C23.1113 6.26985 23.1913 6.05318 23.1913 5.77318C23.1913 5.49318 23.1113 5.27652 22.9513 5.12318C22.7913 4.96985 22.548 4.89318 22.2213 4.89318H21.2913V6.65318H22.2213Z"
-          fill=${e}
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear_61_44"
-            x1="0.579102"
-            y1="13.5082"
-            x2="15.8791"
-            y2="-1.89442"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="${"#008CFF"}" />
-            <stop offset="1" stop-color="${"#3F55FF"}" />
-          </linearGradient>
-        </defs>
-      </svg>
-    `;
+  get _$AU() {
+    return this._$AM._$AU;
   }
-};
-Gt([H()], ht.prototype, "classes", 2);
-ht = Gt([M("pandora-logo")], ht);
-const Jt = void 0;
-async function Re(e) {
-  if (e.length <= 0)
-    return [];
-  const t = new URLSearchParams();
-  return t.set("filter", `property.id="${e}"`), await (await fetch(`${Jt}/api/collections/plugins/records?` + t.toString(), {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })).json();
+  _$AT(t, r, i) {
+    this._$Ct = t, this._$AM = r, this._$Ci = i;
+  }
+  _$AS(t, r) {
+    return this.update(t, r);
+  }
+  update(t, r) {
+    return this.render(...r);
+  }
 }
-async function Kt(e) {
-  return e.property ? (await fetch(`${Jt}/api/collections/plugins/records`, {
-    method: "POST",
-    body: JSON.stringify(e),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })).json() : {
-    ...e,
-    id: Math.random()
-  };
-}
-const B = {
-  plugin: {
-    register: "pandora::register-plugin",
-    icon: {
-      update: "pandora::update-plugin-icon"
-    }
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+class ht extends Re {
+  constructor(t) {
+    if (super(t), this.it = C, t.type !== Me.CHILD) throw Error(this.constructor.directiveName + "() can only be used in child bindings");
   }
-};
-var ze = Object.defineProperty, Ue = (e, t, r) => t in e ? ze(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : e[t] = r, at = (e, t, r) => (Ue(e, typeof t != "symbol" ? t + "" : t, r), r), Fe = (e, t, r) => {
+  render(t) {
+    if (t === C || t == null) return this._t = void 0, this.it = t;
+    if (t === P) return t;
+    if (typeof t != "string") throw Error(this.constructor.directiveName + "() called with a non-string value");
+    if (t === this.it) return this._t;
+    this.it = t;
+    const r = [t];
+    return r.raw = r, this._t = { _$litType$: this.constructor.resultType, strings: r, values: [] };
+  }
+}
+ht.directiveName = "unsafeHTML", ht.resultType = 1;
+const ze = He(ht);
+var Ue = Object.defineProperty, Fe = (e, t, r) => t in e ? Ue(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : e[t] = r, at = (e, t, r) => (Fe(e, typeof t != "symbol" ? t + "" : t, r), r), De = (e, t, r) => {
   if (!t.has(e))
     throw TypeError("Cannot " + r);
 }, lt = (e, t) => {
@@ -676,7 +619,7 @@ var ze = Object.defineProperty, Ue = (e, t, r) => t in e ? ze(e, t, { enumerable
   if (t.has(e))
     throw TypeError("Cannot add the same private member more than once");
   t instanceof WeakSet ? t.add(e) : t.set(e, r);
-}, zt = (e, t, r) => (Fe(e, t, "access private method"), r);
+}, zt = (e, t, r) => (De(e, t, "access private method"), r);
 /**
  * @license
  * Copyright Google LLC All Rights Reserved.
@@ -684,7 +627,7 @@ var ze = Object.defineProperty, Ue = (e, t, r) => t in e ? ze(e, t, { enumerable
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-function Xt(e, t) {
+function Gt(e, t) {
   return Object.is(e, t);
 }
 /**
@@ -700,10 +643,10 @@ function L(e) {
   const t = g;
   return g = e, t;
 }
-function De() {
+function Ve() {
   return g;
 }
-function Ve() {
+function je() {
   return F;
 }
 const _t = {
@@ -739,43 +682,43 @@ function nt(e) {
     const r = g.producerNode[t];
     st(r, g.producerIndexOfThis[t]);
   }
-  g.producerNode[t] !== e && (g.producerNode[t] = e, g.producerIndexOfThis[t] = pt(g) ? te(e, g, t) : 0), g.producerLastReadVersion[t] = e.version;
+  g.producerNode[t] !== e && (g.producerNode[t] = e, g.producerIndexOfThis[t] = pt(g) ? Xt(e, g, t) : 0), g.producerLastReadVersion[t] = e.version;
 }
-function je() {
+function Be() {
   K++;
 }
-function Qt(e) {
+function Jt(e) {
   if (!(!e.dirty && e.lastCleanEpoch === K)) {
-    if (!e.producerMustRecompute(e) && !Ge(e)) {
+    if (!e.producerMustRecompute(e) && !Je(e)) {
       e.dirty = !1, e.lastCleanEpoch = K;
       return;
     }
     e.producerRecomputeValue(e), e.dirty = !1, e.lastCleanEpoch = K;
   }
 }
-function Yt(e) {
+function Kt(e) {
   if (e.liveConsumerNode === void 0)
     return;
   const t = F;
   F = !0;
   try {
     for (const r of e.liveConsumerNode)
-      r.dirty || We(r);
+      r.dirty || Ze(r);
   } finally {
     F = t;
   }
 }
-function Be() {
+function We() {
   return g?.consumerAllowSignalWrites !== !1;
 }
-function We(e) {
-  var t;
-  e.dirty = !0, Yt(e), (t = e.consumerMarkedDirty) == null || t.call(e.wrapper ?? e);
-}
 function Ze(e) {
+  var t;
+  e.dirty = !0, Kt(e), (t = e.consumerMarkedDirty) == null || t.call(e.wrapper ?? e);
+}
+function qe(e) {
   return e && (e.nextProducerIndex = 0), L(e);
 }
-function qe(e, t) {
+function Ge(e, t) {
   if (L(t), !(!e || e.producerNode === void 0 || e.producerIndexOfThis === void 0 || e.producerLastReadVersion === void 0)) {
     if (pt(e))
       for (let r = e.nextProducerIndex; r < e.producerNode.length; r++)
@@ -784,21 +727,21 @@ function qe(e, t) {
       e.producerNode.pop(), e.producerLastReadVersion.pop(), e.producerIndexOfThis.pop();
   }
 }
-function Ge(e) {
+function Je(e) {
   T(e);
   for (let t = 0; t < e.producerNode.length; t++) {
     const r = e.producerNode[t], i = e.producerLastReadVersion[t];
-    if (i !== r.version || (Qt(r), i !== r.version))
+    if (i !== r.version || (Jt(r), i !== r.version))
       return !0;
   }
   return !1;
 }
-function te(e, t, r) {
+function Xt(e, t, r) {
   var i;
   if (xt(e), T(e), e.liveConsumerNode.length === 0) {
     (i = e.watched) == null || i.call(e.wrapper);
     for (let n = 0; n < e.producerNode.length; n++)
-      e.producerIndexOfThis[n] = te(e.producerNode[n], e, n);
+      e.producerIndexOfThis[n] = Xt(e.producerNode[n], e, n);
   }
   return e.liveConsumerIndexOfThis.push(r), e.liveConsumerNode.push(t) - 1;
 }
@@ -836,23 +779,23 @@ function xt(e) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-function ee(e) {
-  if (Qt(e), nt(e), e.value === ft)
+function Qt(e) {
+  if (Jt(e), nt(e), e.value === ft)
     throw e.error;
   return e.value;
 }
-function Je(e) {
-  const t = Object.create(Ke);
+function Ke(e) {
+  const t = Object.create(Xe);
   t.computation = e;
-  const r = () => ee(t);
+  const r = () => Qt(t);
   return r[Y] = t, r;
 }
-const ct = /* @__PURE__ */ Symbol("UNSET"), dt = /* @__PURE__ */ Symbol("COMPUTING"), ft = /* @__PURE__ */ Symbol("ERRORED"), Ke = {
+const ct = /* @__PURE__ */ Symbol("UNSET"), dt = /* @__PURE__ */ Symbol("COMPUTING"), ft = /* @__PURE__ */ Symbol("ERRORED"), Xe = {
   ..._t,
   value: ct,
   dirty: !0,
   error: null,
-  equal: Xt,
+  equal: Gt,
   producerMustRecompute(e) {
     return e.value === ct || e.value === dt;
   },
@@ -861,14 +804,14 @@ const ct = /* @__PURE__ */ Symbol("UNSET"), dt = /* @__PURE__ */ Symbol("COMPUTI
       throw new Error("Detected cycle in computations.");
     const t = e.value;
     e.value = dt;
-    const r = Ze(e);
+    const r = qe(e);
     let i, n = !1;
     try {
       i = e.computation.call(e.wrapper), n = t !== ct && t !== ft && e.equal.call(e.wrapper, t, i);
     } catch (s) {
       i = ft, e.error = s;
     } finally {
-      qe(e, r);
+      Ge(e, r);
     }
     if (n) {
       e.value = t;
@@ -884,12 +827,12 @@ const ct = /* @__PURE__ */ Symbol("UNSET"), dt = /* @__PURE__ */ Symbol("COMPUTI
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-function Xe() {
+function Qe() {
   throw new Error();
 }
-let Qe = Xe;
-function Ye() {
-  Qe();
+let Ye = Qe;
+function tr() {
+  Ye();
 }
 /**
  * @license
@@ -898,25 +841,25 @@ function Ye() {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-function tr(e) {
-  const t = Object.create(ir);
+function er(e) {
+  const t = Object.create(nr);
   t.value = e;
   const r = () => (nt(t), t.value);
   return r[Y] = t, r;
 }
-function er() {
+function rr() {
   return nt(this), this.value;
 }
-function rr(e, t) {
-  Be() || Ye(), e.equal.call(e.wrapper, e.value, t) || (e.value = t, nr(e));
+function ir(e, t) {
+  We() || tr(), e.equal.call(e.wrapper, e.value, t) || (e.value = t, sr(e));
 }
-const ir = {
+const nr = {
   ..._t,
-  equal: Xt,
+  equal: Gt,
   value: void 0
 };
-function nr(e) {
-  e.version++, je(), Yt(e);
+function sr(e) {
+  e.version++, Be(), Kt(e);
 }
 /**
  * @license
@@ -935,13 +878,13 @@ function nr(e) {
  * limitations under the License.
  */
 const m = Symbol("node");
-var W;
+var B;
 ((e) => {
   var t, r, i, n;
   class s {
     constructor(a, d = {}) {
       G(this, r), at(this, t);
-      const c = tr(a)[Y];
+      const c = er(a)[Y];
       if (this[m] = c, c.wrapper = this, d) {
         const v = d.equals;
         v && (c.equal = v), c.watched = d[e.subtle.watched], c.unwatched = d[e.subtle.unwatched];
@@ -950,15 +893,15 @@ var W;
     get() {
       if (!(0, e.isState)(this))
         throw new TypeError("Wrong receiver type for Signal.State.prototype.get");
-      return er.call(this[m]);
+      return rr.call(this[m]);
     }
     set(a) {
       if (!(0, e.isState)(this))
         throw new TypeError("Wrong receiver type for Signal.State.prototype.set");
-      if (Ve())
+      if (je())
         throw new Error("Writes to signals not permitted during Watcher callback");
       const d = this[m];
-      rr(d, a);
+      ir(d, a);
     }
   }
   t = m, r = /* @__PURE__ */ new WeakSet(), e.isState = (l) => typeof l == "object" && lt(r, l), e.State = s;
@@ -967,7 +910,7 @@ var W;
     // Callback is called with this signal as the parameter.
     constructor(a, d) {
       G(this, n), at(this, i);
-      const c = Je(a)[Y];
+      const c = Ke(a)[Y];
       if (c.consumerAllowSignalWrites = !0, this[m] = c, c.wrapper = this, d) {
         const v = d.equals;
         v && (c.equal = v), c.watched = d[e.subtle.watched], c.unwatched = d[e.subtle.unwatched];
@@ -976,7 +919,7 @@ var W;
     get() {
       if (!(0, e.isComputed)(this))
         throw new TypeError("Wrong receiver type for Signal.Computed.prototype.get");
-      return ee(this[m]);
+      return Qt(this[m]);
     }
   }
   i = m, n = /* @__PURE__ */ new WeakSet(), e.isComputed = (l) => typeof l == "object" && lt(n, l), e.Computed = o, ((l) => {
@@ -1075,11 +1018,11 @@ var W;
     }, e.isWatcher = (p) => lt(d, p), l.Watcher = oe;
     function ae() {
       var p;
-      return (p = De()) == null ? void 0 : p.wrapper;
+      return (p = Ve()) == null ? void 0 : p.wrapper;
     }
     l.currentComputed = ae, l.watched = Symbol("watched"), l.unwatched = Symbol("unwatched");
   })(e.subtle || (e.subtle = {}));
-})(W || (W = {}));
+})(B || (B = {}));
 /**
  * @license
  * Copyright 2023 Google LLC
@@ -1090,264 +1033,48 @@ new FinalizationRegistry(({ watcher: e, signal: t }) => {
 });
 /**
  * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-const sr = { CHILD: 2 }, or = (e) => (...t) => ({ _$litDirective$: e, values: t });
-class ar {
-  constructor(t) {
-  }
-  get _$AU() {
-    return this._$AM._$AU;
-  }
-  _$AT(t, r, i) {
-    this._$Ct = t, this._$AM = r, this._$Ci = i;
-  }
-  _$AS(t, r) {
-    return this.update(t, r);
-  }
-  update(t, r) {
-    return this.render(...r);
-  }
-}
-/**
- * @license
  * Copyright 2023 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-W.State;
-W.Computed;
-const lr = (e, t) => new W.State(e, t), tt = lr({
+B.State;
+B.Computed;
+const or = (e, t) => new B.State(e, t), tt = or({
   siteId: null
-});
-var cr = Object.defineProperty, dr = Object.getOwnPropertyDescriptor, re = (e, t, r, i) => {
-  for (var n = i > 1 ? void 0 : i ? dr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
-  return i && n && cr(t, r, n), n;
-};
-let gt = class extends k {
-  constructor() {
-    super(...arguments), this.link = void 0;
-  }
-  connectedCallback() {
-    super.connectedCallback(), this.openLink();
-  }
-  openLink() {
-    this.link && window.open(this.link, "_blank");
-  }
-  async handleOnCreateLinkClick() {
-    const e = prompt("Enter the link you want to create") ?? "";
-    if (e) {
-      const t = {
-        property: tt.get().siteId,
-        type: "pandora-link",
-        attributes: {
-          element: "<pandora-link></pandora-link>",
-          link: e
-        }
-      }, r = await Kt(t);
-      document.dispatchEvent(new CustomEvent(B.plugin.register, {
-        detail: r,
-        bubbles: !0
-      }));
+}), S = "pandora-box", Yt = void 0;
+async function ar(e) {
+  if (e.length <= 0)
+    return [];
+  const t = new URLSearchParams();
+  return t.set("filter", `property.id="${e}"`), await (await fetch(`${Yt}/api/collections/plugins/records?` + t.toString(), {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
     }
-  }
-  static Icon(e) {
-    return `<img src="https://www.google.com/s2/favicons?domain_url=${e.link}"></img>`;
-  }
-  render() {
-    return this.link ? $`<div>
-      <span @click="${this.openLink}" class="cursor-pointer hover:underline"
-        >Open Link</span
-      >
-    </div>` : $`<svg
-        xmlns="http://www.w3.org/2000/svg"
-        @click="${this.handleOnCreateLinkClick}"
-        class="size-6 cursor-pointer"
-        fill="currentColor"
-        viewBox="0 0 256 256"
-      >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM144.56,173.66l-21.45,21.45a44,44,0,0,1-62.22-62.22l21.45-21.46a8,8,0,0,1,11.32,11.31L72.2,144.2a28,28,0,0,0,39.6,39.6l21.45-21.46a8,8,0,0,1,11.31,11.32Zm-34.9-16a8,8,0,0,1-11.32-11.32l48-48a8,8,0,0,1,11.32,11.32Zm85.45-34.55-21.45,21.45a8,8,0,0,1-11.32-11.31L183.8,111.8a28,28,0,0,0-39.6-39.6L122.74,93.66a8,8,0,0,1-11.31-11.32l21.46-21.45a44,44,0,0,1,62.22,62.22Z"
-        ></path>
-      </svg>`;
-  }
-};
-re([H()], gt.prototype, "link", 2);
-gt = re([M("pandora-link")], gt);
-var ur = Object.defineProperty, hr = Object.getOwnPropertyDescriptor, Et = (e, t, r, i) => {
-  for (var n = i > 1 ? void 0 : i ? hr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
-  return i && n && ur(t, r, n), n;
-};
-let et = class extends k {
-  constructor() {
-    super(...arguments), this.heading = void 0, this.note = void 0;
-  }
-  async handleOnCreateNoteClick() {
-    const e = prompt("Enter your note title") ?? "", t = prompt("Enter your note") ?? "";
-    if (e && t) {
-      const r = {
-        property: tt.get().siteId,
-        type: "pandora-note",
-        attributes: {
-          element: "<pandora-note></pandora-note>",
-          heading: e,
-          note: t
-        }
-      }, i = await Kt(r);
-      document.dispatchEvent(new CustomEvent(B.plugin.register, {
-        detail: i,
-        bubbles: !0
-      }));
-    }
-  }
-  static Icon(e) {
-    return '<svg viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg" ><path d="M0.410156 1.09937C0.410156 1.39676 0.651234 1.63784 0.948618 1.63784C1.94171 1.63784 2.60697 1.88611 3.01712 2.24499C3.41785 2.59564 3.64093 3.10919 3.64093 3.79168V7.02245H2.29477C1.99739 7.02245 1.75631 7.26353 1.75631 7.56091C1.75631 7.8583 1.99739 8.09938 2.29477 8.09938H3.64093V11.3301C3.64093 12.0126 3.41785 12.5262 3.01712 12.8768C2.60697 13.2357 1.94171 13.484 0.948618 13.484C0.651234 13.484 0.410156 13.7251 0.410156 14.0225C0.410156 14.3198 0.651234 14.5609 0.948618 14.5609C2.10938 14.5609 3.0595 14.2707 3.72627 13.6873C3.9012 13.5342 4.05197 13.3651 4.17939 13.1822C4.30681 13.3651 4.45758 13.5342 4.6325 13.6873C5.29928 14.2707 6.2494 14.5609 7.41016 14.5609C7.70754 14.5609 7.94862 14.3198 7.94862 14.0225C7.94862 13.7251 7.70754 13.484 7.41016 13.484C6.41707 13.484 5.75181 13.2357 5.34166 12.8768C4.94092 12.5262 4.71785 12.0126 4.71785 11.3301V8.09938H6.064C6.36139 8.09938 6.60247 7.8583 6.60247 7.56091C6.60247 7.26353 6.36139 7.02245 6.064 7.02245H4.71785V3.79168C4.71785 3.10919 4.94092 2.59564 5.34166 2.24499C5.75181 1.88611 6.41707 1.63784 7.41016 1.63784C7.70754 1.63784 7.94862 1.39676 7.94862 1.09937C7.94862 0.801991 7.70754 0.560913 7.41016 0.560913C6.2494 0.560913 5.29928 0.851097 4.6325 1.43453C4.45758 1.58758 4.30681 1.75676 4.17939 1.93962C4.05197 1.75676 3.90119 1.58758 3.72627 1.43453C3.0595 0.851097 2.10938 0.560913 0.948618 0.560913C0.651234 0.560913 0.410156 0.801991 0.410156 1.09937Z" fill="currentColor"/></svg>';
-  }
-  render() {
-    return !this.heading || !this.note ? $`<svg
-        @click="${this.handleOnCreateNoteClick}"
-        class="size-6 cursor-pointer"
-        viewBox="0 0 8 15"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0.410156 1.09937C0.410156 1.39676 0.651234 1.63784 0.948618 1.63784C1.94171 1.63784 2.60697 1.88611 3.01712 2.24499C3.41785 2.59564 3.64093 3.10919 3.64093 3.79168V7.02245H2.29477C1.99739 7.02245 1.75631 7.26353 1.75631 7.56091C1.75631 7.8583 1.99739 8.09938 2.29477 8.09938H3.64093V11.3301C3.64093 12.0126 3.41785 12.5262 3.01712 12.8768C2.60697 13.2357 1.94171 13.484 0.948618 13.484C0.651234 13.484 0.410156 13.7251 0.410156 14.0225C0.410156 14.3198 0.651234 14.5609 0.948618 14.5609C2.10938 14.5609 3.0595 14.2707 3.72627 13.6873C3.9012 13.5342 4.05197 13.3651 4.17939 13.1822C4.30681 13.3651 4.45758 13.5342 4.6325 13.6873C5.29928 14.2707 6.2494 14.5609 7.41016 14.5609C7.70754 14.5609 7.94862 14.3198 7.94862 14.0225C7.94862 13.7251 7.70754 13.484 7.41016 13.484C6.41707 13.484 5.75181 13.2357 5.34166 12.8768C4.94092 12.5262 4.71785 12.0126 4.71785 11.3301V8.09938H6.064C6.36139 8.09938 6.60247 7.8583 6.60247 7.56091C6.60247 7.26353 6.36139 7.02245 6.064 7.02245H4.71785V3.79168C4.71785 3.10919 4.94092 2.59564 5.34166 2.24499C5.75181 1.88611 6.41707 1.63784 7.41016 1.63784C7.70754 1.63784 7.94862 1.39676 7.94862 1.09937C7.94862 0.801991 7.70754 0.560913 7.41016 0.560913C6.2494 0.560913 5.29928 0.851097 4.6325 1.43453C4.45758 1.58758 4.30681 1.75676 4.17939 1.93962C4.05197 1.75676 3.90119 1.58758 3.72627 1.43453C3.0595 0.851097 2.10938 0.560913 0.948618 0.560913C0.651234 0.560913 0.410156 0.801991 0.410156 1.09937Z"
-          fill="currentColor"
-        />
-      </svg>` : $`<div
-        class="w-96 h-auto min-h-56 max-h-96 overflow-auto inline-flex flex-col"
-      >
-        <svg
-          class="size-5 text-[#6EB7FF] shrink-0"
-          viewBox="0 0 8 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0.410156 1.09937C0.410156 1.39676 0.651234 1.63784 0.948618 1.63784C1.94171 1.63784 2.60697 1.88611 3.01712 2.24499C3.41785 2.59564 3.64093 3.10919 3.64093 3.79168V7.02245H2.29477C1.99739 7.02245 1.75631 7.26353 1.75631 7.56091C1.75631 7.8583 1.99739 8.09938 2.29477 8.09938H3.64093V11.3301C3.64093 12.0126 3.41785 12.5262 3.01712 12.8768C2.60697 13.2357 1.94171 13.484 0.948618 13.484C0.651234 13.484 0.410156 13.7251 0.410156 14.0225C0.410156 14.3198 0.651234 14.5609 0.948618 14.5609C2.10938 14.5609 3.0595 14.2707 3.72627 13.6873C3.9012 13.5342 4.05197 13.3651 4.17939 13.1822C4.30681 13.3651 4.45758 13.5342 4.6325 13.6873C5.29928 14.2707 6.2494 14.5609 7.41016 14.5609C7.70754 14.5609 7.94862 14.3198 7.94862 14.0225C7.94862 13.7251 7.70754 13.484 7.41016 13.484C6.41707 13.484 5.75181 13.2357 5.34166 12.8768C4.94092 12.5262 4.71785 12.0126 4.71785 11.3301V8.09938H6.064C6.36139 8.09938 6.60247 7.8583 6.60247 7.56091C6.60247 7.26353 6.36139 7.02245 6.064 7.02245H4.71785V3.79168C4.71785 3.10919 4.94092 2.59564 5.34166 2.24499C5.75181 1.88611 6.41707 1.63784 7.41016 1.63784C7.70754 1.63784 7.94862 1.39676 7.94862 1.09937C7.94862 0.801991 7.70754 0.560913 7.41016 0.560913C6.2494 0.560913 5.29928 0.851097 4.6325 1.43453C4.45758 1.58758 4.30681 1.75676 4.17939 1.93962C4.05197 1.75676 3.90119 1.58758 3.72627 1.43453C3.0595 0.851097 2.10938 0.560913 0.948618 0.560913C0.651234 0.560913 0.410156 0.801991 0.410156 1.09937Z"
-            fill="currentColor"
-          />
-        </svg>
-        <textarea
-          class="font-bold text-white m-0 uppercase text-lg field-sizing-content h-auto shrink-0 resize-none focus:outline-none"
-          rows="3"
-        >
-${this.heading}</textarea
-        >
-        <textarea
-          class="grow m-0 text-white/80 field-sizing-content w-full h-auto shrink-0 resize-none focus:outline-none"
-        >
-${this.note}</textarea
-        >
-      </div>`;
-  }
-};
-Et([H()], et.prototype, "heading", 2);
-Et([H()], et.prototype, "note", 2);
-et = Et([M("pandora-note")], et);
-function ut(...e) {
-  console.log("%cPandora%c%s", "display: flex; flex-direction: row; align-items: center; padding: 5px 10px; background: linear-gradient(44.81deg, #008CFF 0%, #3F55FF 118.08%); border: 1px solid #343330; border-radius: 60px;", "display: flex; flex-direction: row; align-items: center; padding: 5px 10px; background: #15171B; border: 1px solid #343330; border-radius: 60px;", ...e);
+  })).json();
 }
-const S = "pandora-devtool";
-var pr = Object.getOwnPropertyDescriptor, fr = (e, t, r, i) => {
-  for (var n = i > 1 ? void 0 : i ? pr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = o(n) || n);
-  return n;
-};
-let Ut = class extends k {
-  static Icon() {
-    return '<svg viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.47261 1.31531e-06C2.88826 1.31531e-06 2.31703 0.173282 1.83116 0.497932C1.34528 0.822581 0.966592 1.28402 0.742969 1.82389C0.519347 2.36376 0.460837 2.95782 0.574838 3.53095C0.68884 4.10407 0.970233 4.63052 1.38343 5.04372C1.79663 5.45692 2.32308 5.73832 2.89621 5.85232C3.46934 5.96632 4.0634 5.90781 4.60327 5.68419C5.14314 5.46057 5.60458 5.08188 5.92923 4.596C6.25388 4.11013 6.42716 3.5389 6.42716 2.95455C6.42716 2.17095 6.11588 1.41945 5.56179 0.865367C5.00771 0.311283 4.25621 1.31531e-06 3.47261 1.31531e-06ZM3.47261 4.72727C3.122 4.72727 2.77926 4.6233 2.48774 4.42851C2.19621 4.23372 1.969 3.95686 1.83483 3.63294C1.70065 3.30902 1.66555 2.95258 1.73395 2.6087C1.80235 2.26483 1.97118 1.94896 2.21911 1.70104C2.46703 1.45312 2.7829 1.28428 3.12677 1.21588C3.47065 1.14748 3.82708 1.18259 4.15101 1.31676C4.47493 1.45093 4.75179 1.67815 4.94658 1.96967C5.14137 2.2612 5.24534 2.60393 5.24534 2.95455C5.24534 3.4247 5.05857 3.8756 4.72612 4.20805C4.39367 4.5405 3.94277 4.72727 3.47261 4.72727ZM10.5635 5.90909C11.1479 5.90909 11.7191 5.73581 12.205 5.41116C12.6908 5.08651 13.0695 4.62507 13.2932 4.0852C13.5168 3.54533 13.5753 2.95127 13.4613 2.37814C13.3473 1.80502 13.0659 1.27857 12.6527 0.865367C12.2395 0.452167 11.713 0.170774 11.1399 0.0567721C10.5668 -0.0572297 9.97274 0.00128016 9.43286 0.224903C8.89299 0.448525 8.43155 0.827217 8.10691 1.31309C7.78226 1.79896 7.60897 2.37019 7.60897 2.95455C7.60897 3.73814 7.92026 4.48964 8.47434 5.04372C9.02843 5.59781 9.77993 5.90909 10.5635 5.90909ZM10.5635 1.18182C10.9141 1.18182 11.2569 1.28579 11.5484 1.48058C11.8399 1.67537 12.0671 1.95223 12.2013 2.27615C12.3355 2.60008 12.3706 2.95651 12.3022 3.30039C12.2338 3.64426 12.0649 3.96013 11.817 4.20805C11.5691 4.45597 11.2532 4.62481 10.9094 4.69321C10.5655 4.76161 10.209 4.72651 9.88513 4.59233C9.5612 4.45816 9.28434 4.23094 9.08955 3.93942C8.89476 3.6479 8.79079 3.30516 8.79079 2.95455C8.79079 2.48439 8.97756 2.03349 9.31001 1.70104C9.64246 1.36859 10.0934 1.18182 10.5635 1.18182ZM3.47261 7.09091C2.88826 7.09091 2.31703 7.26419 1.83116 7.58884C1.34528 7.91349 0.966592 8.37493 0.742969 8.9148C0.519347 9.45467 0.460837 10.0487 0.574838 10.6219C0.68884 11.195 0.970233 11.7214 1.38343 12.1346C1.79663 12.5478 2.32308 12.8292 2.89621 12.9432C3.46934 13.0572 4.0634 12.9987 4.60327 12.7751C5.14314 12.5515 5.60458 12.1728 5.92923 11.6869C6.25388 11.201 6.42716 10.6298 6.42716 10.0455C6.42716 9.26186 6.11588 8.51036 5.56179 7.95627C5.00771 7.40219 4.25621 7.09091 3.47261 7.09091ZM3.47261 11.8182C3.122 11.8182 2.77926 11.7142 2.48774 11.5194C2.19621 11.3246 1.969 11.0478 1.83483 10.7238C1.70065 10.3999 1.66555 10.0435 1.73395 9.69961C1.80235 9.35574 1.97118 9.03987 2.21911 8.79195C2.46703 8.54403 2.7829 8.37519 3.12677 8.30679C3.47065 8.23839 3.82708 8.27349 4.15101 8.40767C4.47493 8.54184 4.75179 8.76906 4.94658 9.06058C5.14137 9.3521 5.24534 9.69484 5.24534 10.0455C5.24534 10.5156 5.05857 10.9665 4.72612 11.299C4.39367 11.6314 3.94277 11.8182 3.47261 11.8182ZM13.5181 10.0455C13.5181 10.2022 13.4558 10.3525 13.345 10.4633C13.2342 10.5741 13.0839 10.6364 12.9272 10.6364H11.1544V12.4091C11.1544 12.5658 11.0922 12.7161 10.9814 12.8269C10.8705 12.9377 10.7202 13 10.5635 13C10.4068 13 10.2565 12.9377 10.1457 12.8269C10.0349 12.7161 9.97261 12.5658 9.97261 12.4091V10.6364H8.19988C8.04317 10.6364 7.89286 10.5741 7.78205 10.4633C7.67123 10.3525 7.60897 10.2022 7.60897 10.0455C7.60897 9.88873 7.67123 9.73843 7.78205 9.62762C7.89286 9.5168 8.04317 9.45454 8.19988 9.45454H9.97261V7.68182C9.97261 7.5251 10.0349 7.3748 10.1457 7.26398C10.2565 7.15316 10.4068 7.09091 10.5635 7.09091C10.7202 7.09091 10.8705 7.15316 10.9814 7.26398C11.0922 7.3748 11.1544 7.5251 11.1544 7.68182V9.45454H12.9272C13.0839 9.45454 13.2342 9.5168 13.345 9.62762C13.4558 9.73843 13.5181 9.88873 13.5181 10.0455Z" fill="currentColor"/></svg>';
-  }
-  render() {
-    return $`
-      <div class="flex flex-col gap-4">
-        <pandora-link
-          class="text-[#F7F9FB]/60 hover:text-[#6EB7FF] scale-100 hover:scale-110"
-        ></pandora-link>
-        <pandora-note
-          class="text-[#F7F9FB]/60 hover:text-[#6EB7FF] scale-100 hover:scale-110"
-        ></pandora-note>
-      </div>
-    `;
-  }
-};
-Ut = fr([M("pandora-installer")], Ut);
-customElements.whenDefined(S).then(() => {
-  customElements.get(S).registerPlugin({
-    id: "pandora-installer",
-    type: "pandora-installer",
-    label: "Installer Plugin",
-    element: "<pandora-installer></pandora-installer>",
-    hooks: {
-      onReady: () => ut("Installer is initialized!"),
-      onMount: (e) => ut("Installer is mounted!"),
-      onUnmount: (e, t) => ut("Installer is destroyed")
+async function te(e) {
+  return e.property ? (await fetch(`${Yt}/api/collections/plugins/records`, {
+    method: "POST",
+    body: JSON.stringify(e),
+    headers: {
+      "Content-Type": "application/json"
     }
-  });
-});
-var gr = Object.defineProperty, Cr = Object.getOwnPropertyDescriptor, ie = (e, t, r, i) => {
-  for (var n = i > 1 ? void 0 : i ? Cr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
-  return i && n && gr(t, r, n), n;
-};
-let Ct = class extends k {
-  constructor() {
-    super(), this.count = 0, this.originalConsoleError = console.error, this.overrideConsoleError(), this.attachGlobalListeners();
-  }
-  overrideConsoleError() {
-    console.error = (...e) => {
-      this.incrementCount(), this.originalConsoleError.apply(console, e);
-    };
-  }
-  attachGlobalListeners() {
-    window.addEventListener("error", () => this.incrementCount()), window.addEventListener("unhandledrejection", () => this.incrementCount());
-  }
-  incrementCount() {
-    this.count += 1, document.dispatchEvent(new CustomEvent(B.plugin.icon.update, {
-      detail: {
-        id: "pandora-tracer",
-        icon: `<span>${this.count}</span>`
-      },
-      bubbles: !0
-    }));
-  }
-  render() {
-    return $`<div class="text-white">Console Errors: ${this.count}</div>`;
-  }
-};
-ie([qt()], Ct.prototype, "count", 2);
-Ct = ie([M("pandora-tracer")], Ct);
-customElements.whenDefined(S).then(() => {
-  customElements.get(S).registerPlugin({
-    id: "pandora-tracer",
-    label: "Tracer",
-    element: "<pandora-tracer />",
-    icon: '<svg viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.98057 3.51791C6.39094 3.51791 5.81456 3.69275 5.3243 4.02033C4.83404 4.34792 4.45193 4.81352 4.22629 5.35827C4.00064 5.90301 3.94161 6.50244 4.05664 7.08074C4.17167 7.65904 4.4556 8.19024 4.87253 8.60717C5.28946 9.0241 5.82067 9.30804 6.39897 9.42307C6.97727 9.5381 7.57669 9.47906 8.12144 9.25342C8.66619 9.02778 9.13179 8.64567 9.45937 8.15541C9.78695 7.66515 9.9618 7.08876 9.9618 6.49913C9.96097 5.70871 9.64662 4.9509 9.08771 4.392C8.5288 3.83309 7.77099 3.51873 6.98057 3.51791ZM6.98057 8.48661C6.58749 8.48661 6.20323 8.37005 5.87639 8.15166C5.54955 7.93327 5.29481 7.62287 5.14438 7.25971C4.99395 6.89654 4.9546 6.49692 5.03128 6.11139C5.10797 5.72586 5.29726 5.37172 5.57521 5.09377C5.85317 4.81581 6.2073 4.62652 6.59284 4.54984C6.97837 4.47315 7.37799 4.51251 7.74115 4.66294C8.10431 4.81336 8.41472 5.0681 8.6331 5.39494C8.85149 5.72178 8.96806 6.10604 8.96806 6.49913C8.96806 7.02624 8.75866 7.53176 8.38594 7.90449C8.01321 8.27722 7.50769 8.48661 6.98057 8.48661ZM12.4461 6.63328C12.4486 6.54385 12.4486 6.45441 12.4461 6.36497L13.3728 5.20727C13.4214 5.14648 13.455 5.07513 13.471 4.99897C13.487 4.92281 13.4848 4.84396 13.4647 4.76878C13.3128 4.19775 13.0856 3.64949 12.789 3.13842C12.7502 3.07154 12.6962 3.01465 12.6315 2.97228C12.5669 2.9299 12.4932 2.90321 12.4163 2.89434L10.9431 2.73037C10.8818 2.66578 10.8197 2.60367 10.7568 2.54404L10.5829 1.0671C10.5739 0.990213 10.5472 0.916483 10.5047 0.851784C10.4622 0.787085 10.4052 0.733206 10.3382 0.694443C9.82692 0.3984 9.2787 0.171384 8.70782 0.0193209C8.63259 -0.00068005 8.55371 -0.00272573 8.47755 0.0133487C8.40139 0.0294231 8.33006 0.0631679 8.26933 0.111863L7.11473 1.03356C7.02529 1.03356 6.93586 1.03356 6.84642 1.03356L5.68871 0.108758C5.62793 0.0601688 5.55658 0.0265366 5.48042 0.0105705C5.40425 -0.00539564 5.32541 -0.0032494 5.25022 0.0168365C4.67929 0.16902 4.13106 0.396249 3.61987 0.69258C3.55299 0.731414 3.4961 0.785324 3.45372 0.850019C3.41135 0.914713 3.38466 0.988406 3.37578 1.06523L3.21181 2.54094C3.14722 2.60263 3.08511 2.66474 3.02549 2.72726L1.54854 2.89682C1.47166 2.90577 1.39793 2.93255 1.33323 2.97503C1.26853 3.01752 1.21465 3.07453 1.17589 3.14153C0.879845 3.65279 0.65283 4.20101 0.500766 4.77188C0.480765 4.84711 0.47872 4.92599 0.494794 5.00215C0.510868 5.07832 0.544613 5.14964 0.593308 5.21037L1.515 6.36497C1.515 6.45441 1.515 6.54385 1.515 6.63328L0.590203 7.79099C0.541614 7.85178 0.507982 7.92312 0.492016 7.99929C0.47605 8.07545 0.478196 8.1543 0.498282 8.22948C0.650193 8.80051 0.877437 9.34877 1.17403 9.85983C1.21286 9.92671 1.26677 9.98361 1.33146 10.026C1.39616 10.0684 1.46985 10.095 1.54668 10.1039L3.0199 10.2679C3.08159 10.3325 3.1437 10.3946 3.20622 10.4542L3.37827 11.9312C3.38721 12.008 3.41399 12.0818 3.45648 12.1465C3.49896 12.2112 3.55598 12.2651 3.62297 12.3038C4.13423 12.5999 4.68245 12.8269 5.25333 12.9789C5.32856 12.9989 5.40743 13.001 5.4836 12.9849C5.55976 12.9688 5.63109 12.9351 5.69182 12.8864L6.84642 11.9647C6.93586 11.9672 7.02529 11.9672 7.11473 11.9647L8.27244 12.8914C8.33322 12.94 8.40457 12.9736 8.48073 12.9896C8.5569 13.0055 8.63574 13.0034 8.71093 12.9833C9.28195 12.8314 9.83022 12.6041 10.3413 12.3075C10.4082 12.2687 10.4651 12.2148 10.5074 12.1501C10.5498 12.0854 10.5765 12.0117 10.5854 11.9349L10.7493 10.4617C10.8139 10.4004 10.876 10.3383 10.9357 10.2753L12.4126 10.1014C12.4895 10.0925 12.5632 10.0657 12.6279 10.0232C12.6926 9.98074 12.7465 9.92373 12.7853 9.85673C13.0813 9.34547 13.3083 8.79725 13.4604 8.22637C13.4804 8.15114 13.4824 8.07227 13.4664 7.9961C13.4503 7.91994 13.4165 7.84862 13.3678 7.78789L12.4461 6.63328ZM11.4462 6.22958C11.4568 6.40912 11.4568 6.58913 11.4462 6.76868C11.4388 6.89161 11.4773 7.0129 11.5543 7.10904L12.4356 8.21023C12.3345 8.53162 12.205 8.84339 12.0487 9.14186L10.645 9.30086C10.5228 9.31443 10.4099 9.37285 10.3282 9.46482C10.2087 9.59928 10.0813 9.72662 9.94689 9.84617C9.85491 9.92782 9.79649 10.0407 9.78292 10.1629L9.62703 11.5653C9.3286 11.7217 9.01682 11.8512 8.6954 11.9523L7.59359 11.071C7.50542 11.0005 7.3959 10.9622 7.28304 10.9623H7.25323C7.07369 10.9728 6.89367 10.9728 6.71413 10.9623C6.5912 10.9549 6.46991 10.9934 6.37377 11.0703L5.26948 11.9523C4.94809 11.8512 4.63632 11.7217 4.33785 11.5653L4.17885 10.1635C4.16528 10.0413 4.10686 9.92844 4.01488 9.84679C3.88042 9.72724 3.75309 9.5999 3.63353 9.46544C3.55188 9.37347 3.43902 9.31505 3.31678 9.30148L1.91436 9.14496C1.75797 8.84653 1.62848 8.53475 1.52742 8.21333L2.40875 7.11152C2.4857 7.01538 2.52422 6.89409 2.51682 6.77117C2.50626 6.59162 2.50626 6.41161 2.51682 6.23206C2.52422 6.10914 2.4857 5.98785 2.40875 5.89171L1.52742 4.78803C1.62855 4.46664 1.75804 4.15487 1.91436 3.8564L3.31616 3.6974C3.4384 3.68383 3.55126 3.62541 3.63291 3.53344C3.75247 3.39898 3.8798 3.27164 4.01426 3.15209C4.1066 3.07038 4.16526 2.95726 4.17885 2.83471L4.33474 1.43292C4.63318 1.27652 4.94495 1.14703 5.26637 1.04598L6.36818 1.9273C6.46432 2.00426 6.58561 2.04277 6.70854 2.03537C6.88808 2.02481 7.0681 2.02481 7.24764 2.03537C7.37057 2.04277 7.49186 2.00426 7.588 1.9273L8.69167 1.04598C9.01306 1.14711 9.32483 1.2766 9.6233 1.43292L9.7823 2.83471C9.79587 2.95695 9.85429 3.06981 9.94627 3.15147C10.0807 3.27102 10.2081 3.39835 10.3276 3.53281C10.4093 3.62479 10.5221 3.68321 10.6444 3.69678L12.0468 3.85267C12.2032 4.15111 12.3327 4.46289 12.4337 4.78431L11.5524 5.88612C11.4747 5.98307 11.4361 6.10561 11.4443 6.22958H11.4462Z" fill="currentColor"/></svg>'
-  });
-});
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-class vt extends ar {
-  constructor(t) {
-    if (super(t), this.it = C, t.type !== sr.CHILD) throw Error(this.constructor.directiveName + "() can only be used in child bindings");
-  }
-  render(t) {
-    if (t === C || t == null) return this._t = void 0, this.it = t;
-    if (t === P) return t;
-    if (typeof t != "string") throw Error(this.constructor.directiveName + "() called with a non-string value");
-    if (t === this.it) return this._t;
-    this.it = t;
-    const r = [t];
-    return r.raw = r, this._t = { _$litType$: this.constructor.resultType, strings: r, values: [] };
-  }
+  })).json() : {
+    ...e,
+    id: Math.random()
+  };
 }
-vt.directiveName = "unsafeHTML", vt.resultType = 1;
-const vr = or(vt);
-var mr = Object.defineProperty, wr = Object.getOwnPropertyDescriptor, At = (e, t, r, i) => {
-  for (var n = i > 1 ? void 0 : i ? wr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
-  return i && n && mr(t, r, n), n;
+const W = {
+  plugin: {
+    register: "pandora::register-plugin",
+    icon: {
+      update: "pandora::update-plugin-icon"
+    }
+  }
+};
+var lr = Object.defineProperty, cr = Object.getOwnPropertyDescriptor, Et = (e, t, r, i) => {
+  for (var n = i > 1 ? void 0 : i ? cr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
+  return i && n && lr(t, r, n), n;
 };
 let w = class extends k {
   constructor() {
@@ -1357,6 +1084,7 @@ let w = class extends k {
     if (!w.plugins.find((t) => t.id === e.id)) {
       w.plugins.push(e);
       const t = document.querySelector(S);
+      if (!t) return;
       if (e.hooks) {
         const {
           onReady: r
@@ -1367,7 +1095,9 @@ let w = class extends k {
     }
   }
   static unRegisterPlugin(e) {
-    w.plugins = w.plugins.filter((r) => r.id !== e.id), document.querySelector(S).requestUpdate();
+    w.plugins = w.plugins.filter((r) => r.id !== e.id);
+    const t = document.querySelector(S);
+    t && t.requestUpdate();
   }
   async connectedCallback() {
     super.connectedCallback();
@@ -1375,7 +1105,7 @@ let w = class extends k {
     tt.set({
       ...tt.get(),
       siteId: e ? this.siteId : null
-    }), document.addEventListener(B.plugin.icon.update, this.onUpdatePluginIconImage.bind(this)), document.addEventListener(B.plugin.register, this.onRegisterPlugin.bind(this)), (await Re(this.siteId).then((i) => i.items)).map((i) => {
+    }), document.addEventListener(W.plugin.icon.update, this.onUpdatePluginIconImage.bind(this)), document.addEventListener(W.plugin.register, this.onRegisterPlugin.bind(this)), (await ar(this.siteId).then((i) => i.items)).map((i) => {
       const {
         id: n,
         created: s,
@@ -1490,7 +1220,7 @@ let w = class extends k {
                   <div
                     class="relative size-5 [&>img,&>svg]:size-5 transition-all cursor-pointer ${t ? "text-[#F7F9FB] scale-80" : "text-[#F7F9FB]/60 hover:text-[#6EB7FF] scale-100 group-hover:scale-110"}"
                   >
-                    ${vr(i)}
+                    ${ze(i)}
                   </div>
                 </div>`;
     })}
@@ -1502,18 +1232,289 @@ let w = class extends k {
   }
 };
 w.plugins = [];
-At([qt()], w.prototype, "activePlugin", 2);
-At([H({
+Et([qt()], w.prototype, "activePlugin", 2);
+Et([H({
   type: String,
   attribute: "site-id"
 })], w.prototype, "siteId", 2);
-w = At([M(S)], w);
+w = Et([M(S)], w);
+var dr = Object.defineProperty, ur = Object.getOwnPropertyDescriptor, ee = (e, t, r, i) => {
+  for (var n = i > 1 ? void 0 : i ? ur(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
+  return i && n && dr(t, r, n), n;
+};
+let gt = class extends k {
+  constructor() {
+    super(...arguments), this.classes = "size-10";
+  }
+  render() {
+    const e = "#3EA8FF";
+    return $`
+      <svg
+        class="${this.classes}"
+        viewBox="0 0 94 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.579102 7.00818C0.579102 3.41833 3.48974 0.508179 7.0802 0.508179C10.6707 0.508179 13.5813 3.41833 13.5813 7.00818C13.5813 10.598 10.6707 13.5082 7.0802 13.5082L0.579102 13.5082L0.579102 7.00818Z"
+          fill="url(#paint0_linear_61_44)"
+        />
+        <path
+          d="M91.4494 9.29318H88.8294L88.4094 10.5332H86.6194L89.1594 3.51318H91.1394L93.6794 10.5332H91.8694L91.4494 9.29318ZM91.0094 7.97318L90.1394 5.40318L89.2794 7.97318H91.0094Z"
+          fill=${e}
+        />
+        <path
+          d="M80.0168 10.5332L78.5568 7.88318H78.1468V10.5332H76.4368V3.51318H79.3068C79.8601 3.51318 80.3301 3.60985 80.7168 3.80318C81.1101 3.99652 81.4034 4.26318 81.5968 4.60318C81.7901 4.93652 81.8868 5.30985 81.8868 5.72318C81.8868 6.18985 81.7534 6.60652 81.4868 6.97318C81.2268 7.33985 80.8401 7.59985 80.3268 7.75318L81.9468 10.5332H80.0168ZM78.1468 6.67318H79.2068C79.5201 6.67318 79.7534 6.59652 79.9068 6.44318C80.0668 6.28985 80.1468 6.07318 80.1468 5.79318C80.1468 5.52652 80.0668 5.31652 79.9068 5.16318C79.7534 5.00985 79.5201 4.93318 79.2068 4.93318H78.1468V6.67318Z"
+          fill=${e}
+        />
+        <path
+          d="M67.7763 10.6032C67.1163 10.6032 66.5096 10.4499 65.9563 10.1432C65.4096 9.83654 64.9729 9.40987 64.6463 8.86321C64.3263 8.30987 64.1663 7.68987 64.1663 7.00321C64.1663 6.31654 64.3263 5.69987 64.6463 5.15321C64.9729 4.60654 65.4096 4.17987 65.9563 3.87321C66.5096 3.56654 67.1163 3.41321 67.7763 3.41321C68.4363 3.41321 69.0396 3.56654 69.5863 3.87321C70.1396 4.17987 70.5729 4.60654 70.8863 5.15321C71.2063 5.69987 71.3663 6.31654 71.3663 7.00321C71.3663 7.68987 71.2063 8.30987 70.8863 8.86321C70.5663 9.40987 70.1329 9.83654 69.5863 10.1432C69.0396 10.4499 68.4363 10.6032 67.7763 10.6032ZM67.7763 9.04321C68.3363 9.04321 68.7829 8.85654 69.1163 8.48321C69.4563 8.10987 69.6263 7.61654 69.6263 7.00321C69.6263 6.38321 69.4563 5.88987 69.1163 5.52321C68.7829 5.14987 68.3363 4.96321 67.7763 4.96321C67.2096 4.96321 66.7563 5.14654 66.4163 5.51321C66.0829 5.87987 65.9163 6.37654 65.9163 7.00321C65.9163 7.62321 66.0829 8.11987 66.4163 8.49321C66.7563 8.85987 67.2096 9.04321 67.7763 9.04321Z"
+          fill=${e}
+        />
+        <path
+          d="M55.7015 3.51318C56.4415 3.51318 57.0882 3.65985 57.6415 3.95318C58.1949 4.24652 58.6215 4.65985 58.9215 5.19318C59.2282 5.71985 59.3815 6.32985 59.3815 7.02318C59.3815 7.70985 59.2282 8.31985 58.9215 8.85318C58.6215 9.38652 58.1915 9.79985 57.6315 10.0932C57.0782 10.3865 56.4349 10.5332 55.7015 10.5332H53.0715V3.51318H55.7015ZM55.5915 9.05318C56.2382 9.05318 56.7415 8.87652 57.1015 8.52318C57.4615 8.16985 57.6415 7.66985 57.6415 7.02318C57.6415 6.37652 57.4615 5.87318 57.1015 5.51318C56.7415 5.15318 56.2382 4.97318 55.5915 4.97318H54.7815V9.05318H55.5915Z"
+          fill=${e}
+        />
+        <path
+          d="M47.7129 10.5332H46.0029L43.1429 6.20318V10.5332H41.4329V3.51318H43.1429L46.0029 7.86318V3.51318H47.7129V10.5332Z"
+          fill=${e}
+        />
+        <path
+          d="M34.3107 9.29318H31.6907L31.2707 10.5332H29.4807L32.0207 3.51318H34.0007L36.5407 10.5332H34.7307L34.3107 9.29318ZM33.8707 7.97318L33.0007 5.40318L32.1407 7.97318H33.8707Z"
+          fill=${e}
+        />
+        <path
+          d="M24.9313 5.77318C24.9313 6.17985 24.838 6.55318 24.6513 6.89318C24.4646 7.22652 24.178 7.49652 23.7913 7.70318C23.4046 7.90985 22.9246 8.01318 22.3513 8.01318H21.2913V10.5332H19.5813V3.51318H22.3513C22.9113 3.51318 23.3846 3.60985 23.7713 3.80318C24.158 3.99652 24.448 4.26318 24.6413 4.60318C24.8346 4.94318 24.9313 5.33318 24.9313 5.77318ZM22.2213 6.65318C22.548 6.65318 22.7913 6.57652 22.9513 6.42318C23.1113 6.26985 23.1913 6.05318 23.1913 5.77318C23.1913 5.49318 23.1113 5.27652 22.9513 5.12318C22.7913 4.96985 22.548 4.89318 22.2213 4.89318H21.2913V6.65318H22.2213Z"
+          fill=${e}
+        />
+        <defs>
+          <linearGradient
+            id="paint0_linear_61_44"
+            x1="0.579102"
+            y1="13.5082"
+            x2="15.8791"
+            y2="-1.89442"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="${"#008CFF"}" />
+            <stop offset="1" stop-color="${"#3F55FF"}" />
+          </linearGradient>
+        </defs>
+      </svg>
+    `;
+  }
+};
+ee([H()], gt.prototype, "classes", 2);
+gt = ee([M("pandora-logo")], gt);
+var hr = Object.defineProperty, pr = Object.getOwnPropertyDescriptor, re = (e, t, r, i) => {
+  for (var n = i > 1 ? void 0 : i ? pr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
+  return i && n && hr(t, r, n), n;
+};
+let Ct = class extends k {
+  constructor() {
+    super(...arguments), this.link = void 0;
+  }
+  connectedCallback() {
+    super.connectedCallback(), this.openLink();
+  }
+  openLink() {
+    this.link && window.open(this.link, "_blank");
+  }
+  async handleOnCreateLinkClick() {
+    const e = prompt("Enter the link you want to create") ?? "";
+    if (e) {
+      const t = {
+        property: tt.get().siteId,
+        type: "pandora-link",
+        attributes: {
+          element: "<pandora-link></pandora-link>",
+          link: e
+        }
+      }, r = await te(t);
+      document.dispatchEvent(new CustomEvent(W.plugin.register, {
+        detail: r,
+        bubbles: !0
+      }));
+    }
+  }
+  static Icon(e) {
+    return `<img src="https://www.google.com/s2/favicons?domain_url=${e.link}"></img>`;
+  }
+  render() {
+    return this.link ? $`<div>
+      <span @click="${this.openLink}" class="cursor-pointer hover:underline"
+        >Open Link</span
+      >
+    </div>` : $`<svg
+        xmlns="http://www.w3.org/2000/svg"
+        @click="${this.handleOnCreateLinkClick}"
+        class="size-6 cursor-pointer"
+        fill="currentColor"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM144.56,173.66l-21.45,21.45a44,44,0,0,1-62.22-62.22l21.45-21.46a8,8,0,0,1,11.32,11.31L72.2,144.2a28,28,0,0,0,39.6,39.6l21.45-21.46a8,8,0,0,1,11.31,11.32Zm-34.9-16a8,8,0,0,1-11.32-11.32l48-48a8,8,0,0,1,11.32,11.32Zm85.45-34.55-21.45,21.45a8,8,0,0,1-11.32-11.31L183.8,111.8a28,28,0,0,0-39.6-39.6L122.74,93.66a8,8,0,0,1-11.31-11.32l21.46-21.45a44,44,0,0,1,62.22,62.22Z"
+        ></path>
+      </svg>`;
+  }
+};
+re([H()], Ct.prototype, "link", 2);
+Ct = re([M("pandora-link")], Ct);
+var fr = Object.defineProperty, gr = Object.getOwnPropertyDescriptor, At = (e, t, r, i) => {
+  for (var n = i > 1 ? void 0 : i ? gr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
+  return i && n && fr(t, r, n), n;
+};
+let et = class extends k {
+  constructor() {
+    super(...arguments), this.heading = void 0, this.note = void 0;
+  }
+  async handleOnCreateNoteClick() {
+    const e = prompt("Enter your note title") ?? "", t = prompt("Enter your note") ?? "";
+    if (e && t) {
+      const r = {
+        property: tt.get().siteId,
+        type: "pandora-note",
+        attributes: {
+          element: "<pandora-note></pandora-note>",
+          heading: e,
+          note: t
+        }
+      }, i = await te(r);
+      document.dispatchEvent(new CustomEvent(W.plugin.register, {
+        detail: i,
+        bubbles: !0
+      }));
+    }
+  }
+  static Icon(e) {
+    return '<svg viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg" ><path d="M0.410156 1.09937C0.410156 1.39676 0.651234 1.63784 0.948618 1.63784C1.94171 1.63784 2.60697 1.88611 3.01712 2.24499C3.41785 2.59564 3.64093 3.10919 3.64093 3.79168V7.02245H2.29477C1.99739 7.02245 1.75631 7.26353 1.75631 7.56091C1.75631 7.8583 1.99739 8.09938 2.29477 8.09938H3.64093V11.3301C3.64093 12.0126 3.41785 12.5262 3.01712 12.8768C2.60697 13.2357 1.94171 13.484 0.948618 13.484C0.651234 13.484 0.410156 13.7251 0.410156 14.0225C0.410156 14.3198 0.651234 14.5609 0.948618 14.5609C2.10938 14.5609 3.0595 14.2707 3.72627 13.6873C3.9012 13.5342 4.05197 13.3651 4.17939 13.1822C4.30681 13.3651 4.45758 13.5342 4.6325 13.6873C5.29928 14.2707 6.2494 14.5609 7.41016 14.5609C7.70754 14.5609 7.94862 14.3198 7.94862 14.0225C7.94862 13.7251 7.70754 13.484 7.41016 13.484C6.41707 13.484 5.75181 13.2357 5.34166 12.8768C4.94092 12.5262 4.71785 12.0126 4.71785 11.3301V8.09938H6.064C6.36139 8.09938 6.60247 7.8583 6.60247 7.56091C6.60247 7.26353 6.36139 7.02245 6.064 7.02245H4.71785V3.79168C4.71785 3.10919 4.94092 2.59564 5.34166 2.24499C5.75181 1.88611 6.41707 1.63784 7.41016 1.63784C7.70754 1.63784 7.94862 1.39676 7.94862 1.09937C7.94862 0.801991 7.70754 0.560913 7.41016 0.560913C6.2494 0.560913 5.29928 0.851097 4.6325 1.43453C4.45758 1.58758 4.30681 1.75676 4.17939 1.93962C4.05197 1.75676 3.90119 1.58758 3.72627 1.43453C3.0595 0.851097 2.10938 0.560913 0.948618 0.560913C0.651234 0.560913 0.410156 0.801991 0.410156 1.09937Z" fill="currentColor"/></svg>';
+  }
+  render() {
+    return !this.heading || !this.note ? $`<svg
+        @click="${this.handleOnCreateNoteClick}"
+        class="size-6 cursor-pointer"
+        viewBox="0 0 8 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.410156 1.09937C0.410156 1.39676 0.651234 1.63784 0.948618 1.63784C1.94171 1.63784 2.60697 1.88611 3.01712 2.24499C3.41785 2.59564 3.64093 3.10919 3.64093 3.79168V7.02245H2.29477C1.99739 7.02245 1.75631 7.26353 1.75631 7.56091C1.75631 7.8583 1.99739 8.09938 2.29477 8.09938H3.64093V11.3301C3.64093 12.0126 3.41785 12.5262 3.01712 12.8768C2.60697 13.2357 1.94171 13.484 0.948618 13.484C0.651234 13.484 0.410156 13.7251 0.410156 14.0225C0.410156 14.3198 0.651234 14.5609 0.948618 14.5609C2.10938 14.5609 3.0595 14.2707 3.72627 13.6873C3.9012 13.5342 4.05197 13.3651 4.17939 13.1822C4.30681 13.3651 4.45758 13.5342 4.6325 13.6873C5.29928 14.2707 6.2494 14.5609 7.41016 14.5609C7.70754 14.5609 7.94862 14.3198 7.94862 14.0225C7.94862 13.7251 7.70754 13.484 7.41016 13.484C6.41707 13.484 5.75181 13.2357 5.34166 12.8768C4.94092 12.5262 4.71785 12.0126 4.71785 11.3301V8.09938H6.064C6.36139 8.09938 6.60247 7.8583 6.60247 7.56091C6.60247 7.26353 6.36139 7.02245 6.064 7.02245H4.71785V3.79168C4.71785 3.10919 4.94092 2.59564 5.34166 2.24499C5.75181 1.88611 6.41707 1.63784 7.41016 1.63784C7.70754 1.63784 7.94862 1.39676 7.94862 1.09937C7.94862 0.801991 7.70754 0.560913 7.41016 0.560913C6.2494 0.560913 5.29928 0.851097 4.6325 1.43453C4.45758 1.58758 4.30681 1.75676 4.17939 1.93962C4.05197 1.75676 3.90119 1.58758 3.72627 1.43453C3.0595 0.851097 2.10938 0.560913 0.948618 0.560913C0.651234 0.560913 0.410156 0.801991 0.410156 1.09937Z"
+          fill="currentColor"
+        />
+      </svg>` : $`<div
+        class="w-96 h-auto min-h-56 max-h-96 overflow-auto inline-flex flex-col"
+      >
+        <svg
+          class="size-5 text-[#6EB7FF] shrink-0"
+          viewBox="0 0 8 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.410156 1.09937C0.410156 1.39676 0.651234 1.63784 0.948618 1.63784C1.94171 1.63784 2.60697 1.88611 3.01712 2.24499C3.41785 2.59564 3.64093 3.10919 3.64093 3.79168V7.02245H2.29477C1.99739 7.02245 1.75631 7.26353 1.75631 7.56091C1.75631 7.8583 1.99739 8.09938 2.29477 8.09938H3.64093V11.3301C3.64093 12.0126 3.41785 12.5262 3.01712 12.8768C2.60697 13.2357 1.94171 13.484 0.948618 13.484C0.651234 13.484 0.410156 13.7251 0.410156 14.0225C0.410156 14.3198 0.651234 14.5609 0.948618 14.5609C2.10938 14.5609 3.0595 14.2707 3.72627 13.6873C3.9012 13.5342 4.05197 13.3651 4.17939 13.1822C4.30681 13.3651 4.45758 13.5342 4.6325 13.6873C5.29928 14.2707 6.2494 14.5609 7.41016 14.5609C7.70754 14.5609 7.94862 14.3198 7.94862 14.0225C7.94862 13.7251 7.70754 13.484 7.41016 13.484C6.41707 13.484 5.75181 13.2357 5.34166 12.8768C4.94092 12.5262 4.71785 12.0126 4.71785 11.3301V8.09938H6.064C6.36139 8.09938 6.60247 7.8583 6.60247 7.56091C6.60247 7.26353 6.36139 7.02245 6.064 7.02245H4.71785V3.79168C4.71785 3.10919 4.94092 2.59564 5.34166 2.24499C5.75181 1.88611 6.41707 1.63784 7.41016 1.63784C7.70754 1.63784 7.94862 1.39676 7.94862 1.09937C7.94862 0.801991 7.70754 0.560913 7.41016 0.560913C6.2494 0.560913 5.29928 0.851097 4.6325 1.43453C4.45758 1.58758 4.30681 1.75676 4.17939 1.93962C4.05197 1.75676 3.90119 1.58758 3.72627 1.43453C3.0595 0.851097 2.10938 0.560913 0.948618 0.560913C0.651234 0.560913 0.410156 0.801991 0.410156 1.09937Z"
+            fill="currentColor"
+          />
+        </svg>
+        <textarea
+          class="font-bold text-white m-0 uppercase text-lg field-sizing-content h-auto shrink-0 resize-none focus:outline-none"
+          rows="3"
+        >
+${this.heading}</textarea
+        >
+        <textarea
+          class="grow m-0 text-white/80 field-sizing-content w-full h-auto shrink-0 resize-none focus:outline-none"
+        >
+${this.note}</textarea
+        >
+      </div>`;
+  }
+};
+At([H()], et.prototype, "heading", 2);
+At([H()], et.prototype, "note", 2);
+et = At([M("pandora-note")], et);
+function ut(...e) {
+  console.log("%cPandora%c%s", "display: flex; flex-direction: row; align-items: center; padding: 5px 10px; background: linear-gradient(44.81deg, #008CFF 0%, #3F55FF 118.08%); border: 1px solid #343330; border-radius: 60px;", "display: flex; flex-direction: row; align-items: center; padding: 5px 10px; background: #15171B; border: 1px solid #343330; border-radius: 60px;", ...e);
+}
+var Cr = Object.getOwnPropertyDescriptor, vr = (e, t, r, i) => {
+  for (var n = i > 1 ? void 0 : i ? Cr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = o(n) || n);
+  return n;
+};
+let Ut = class extends k {
+  static Icon() {
+    return '<svg viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.47261 1.31531e-06C2.88826 1.31531e-06 2.31703 0.173282 1.83116 0.497932C1.34528 0.822581 0.966592 1.28402 0.742969 1.82389C0.519347 2.36376 0.460837 2.95782 0.574838 3.53095C0.68884 4.10407 0.970233 4.63052 1.38343 5.04372C1.79663 5.45692 2.32308 5.73832 2.89621 5.85232C3.46934 5.96632 4.0634 5.90781 4.60327 5.68419C5.14314 5.46057 5.60458 5.08188 5.92923 4.596C6.25388 4.11013 6.42716 3.5389 6.42716 2.95455C6.42716 2.17095 6.11588 1.41945 5.56179 0.865367C5.00771 0.311283 4.25621 1.31531e-06 3.47261 1.31531e-06ZM3.47261 4.72727C3.122 4.72727 2.77926 4.6233 2.48774 4.42851C2.19621 4.23372 1.969 3.95686 1.83483 3.63294C1.70065 3.30902 1.66555 2.95258 1.73395 2.6087C1.80235 2.26483 1.97118 1.94896 2.21911 1.70104C2.46703 1.45312 2.7829 1.28428 3.12677 1.21588C3.47065 1.14748 3.82708 1.18259 4.15101 1.31676C4.47493 1.45093 4.75179 1.67815 4.94658 1.96967C5.14137 2.2612 5.24534 2.60393 5.24534 2.95455C5.24534 3.4247 5.05857 3.8756 4.72612 4.20805C4.39367 4.5405 3.94277 4.72727 3.47261 4.72727ZM10.5635 5.90909C11.1479 5.90909 11.7191 5.73581 12.205 5.41116C12.6908 5.08651 13.0695 4.62507 13.2932 4.0852C13.5168 3.54533 13.5753 2.95127 13.4613 2.37814C13.3473 1.80502 13.0659 1.27857 12.6527 0.865367C12.2395 0.452167 11.713 0.170774 11.1399 0.0567721C10.5668 -0.0572297 9.97274 0.00128016 9.43286 0.224903C8.89299 0.448525 8.43155 0.827217 8.10691 1.31309C7.78226 1.79896 7.60897 2.37019 7.60897 2.95455C7.60897 3.73814 7.92026 4.48964 8.47434 5.04372C9.02843 5.59781 9.77993 5.90909 10.5635 5.90909ZM10.5635 1.18182C10.9141 1.18182 11.2569 1.28579 11.5484 1.48058C11.8399 1.67537 12.0671 1.95223 12.2013 2.27615C12.3355 2.60008 12.3706 2.95651 12.3022 3.30039C12.2338 3.64426 12.0649 3.96013 11.817 4.20805C11.5691 4.45597 11.2532 4.62481 10.9094 4.69321C10.5655 4.76161 10.209 4.72651 9.88513 4.59233C9.5612 4.45816 9.28434 4.23094 9.08955 3.93942C8.89476 3.6479 8.79079 3.30516 8.79079 2.95455C8.79079 2.48439 8.97756 2.03349 9.31001 1.70104C9.64246 1.36859 10.0934 1.18182 10.5635 1.18182ZM3.47261 7.09091C2.88826 7.09091 2.31703 7.26419 1.83116 7.58884C1.34528 7.91349 0.966592 8.37493 0.742969 8.9148C0.519347 9.45467 0.460837 10.0487 0.574838 10.6219C0.68884 11.195 0.970233 11.7214 1.38343 12.1346C1.79663 12.5478 2.32308 12.8292 2.89621 12.9432C3.46934 13.0572 4.0634 12.9987 4.60327 12.7751C5.14314 12.5515 5.60458 12.1728 5.92923 11.6869C6.25388 11.201 6.42716 10.6298 6.42716 10.0455C6.42716 9.26186 6.11588 8.51036 5.56179 7.95627C5.00771 7.40219 4.25621 7.09091 3.47261 7.09091ZM3.47261 11.8182C3.122 11.8182 2.77926 11.7142 2.48774 11.5194C2.19621 11.3246 1.969 11.0478 1.83483 10.7238C1.70065 10.3999 1.66555 10.0435 1.73395 9.69961C1.80235 9.35574 1.97118 9.03987 2.21911 8.79195C2.46703 8.54403 2.7829 8.37519 3.12677 8.30679C3.47065 8.23839 3.82708 8.27349 4.15101 8.40767C4.47493 8.54184 4.75179 8.76906 4.94658 9.06058C5.14137 9.3521 5.24534 9.69484 5.24534 10.0455C5.24534 10.5156 5.05857 10.9665 4.72612 11.299C4.39367 11.6314 3.94277 11.8182 3.47261 11.8182ZM13.5181 10.0455C13.5181 10.2022 13.4558 10.3525 13.345 10.4633C13.2342 10.5741 13.0839 10.6364 12.9272 10.6364H11.1544V12.4091C11.1544 12.5658 11.0922 12.7161 10.9814 12.8269C10.8705 12.9377 10.7202 13 10.5635 13C10.4068 13 10.2565 12.9377 10.1457 12.8269C10.0349 12.7161 9.97261 12.5658 9.97261 12.4091V10.6364H8.19988C8.04317 10.6364 7.89286 10.5741 7.78205 10.4633C7.67123 10.3525 7.60897 10.2022 7.60897 10.0455C7.60897 9.88873 7.67123 9.73843 7.78205 9.62762C7.89286 9.5168 8.04317 9.45454 8.19988 9.45454H9.97261V7.68182C9.97261 7.5251 10.0349 7.3748 10.1457 7.26398C10.2565 7.15316 10.4068 7.09091 10.5635 7.09091C10.7202 7.09091 10.8705 7.15316 10.9814 7.26398C11.0922 7.3748 11.1544 7.5251 11.1544 7.68182V9.45454H12.9272C13.0839 9.45454 13.2342 9.5168 13.345 9.62762C13.4558 9.73843 13.5181 9.88873 13.5181 10.0455Z" fill="currentColor"/></svg>';
+  }
+  render() {
+    return $`
+      <div class="flex flex-col gap-4">
+        <pandora-link
+          class="text-[#F7F9FB]/60 hover:text-[#6EB7FF] scale-100 hover:scale-110"
+        ></pandora-link>
+        <pandora-note
+          class="text-[#F7F9FB]/60 hover:text-[#6EB7FF] scale-100 hover:scale-110"
+        ></pandora-note>
+      </div>
+    `;
+  }
+};
+Ut = vr([M("pandora-installer")], Ut);
+customElements.whenDefined(S).then(() => {
+  customElements.get(S).registerPlugin({
+    id: "pandora-installer",
+    type: "pandora-installer",
+    label: "Installer Plugin",
+    element: "<pandora-installer></pandora-installer>",
+    hooks: {
+      onReady: () => ut("Installer is initialized!"),
+      onMount: (e) => ut("Installer is mounted!"),
+      onUnmount: (e, t) => ut("Installer is destroyed")
+    }
+  });
+});
+var mr = Object.defineProperty, wr = Object.getOwnPropertyDescriptor, ie = (e, t, r, i) => {
+  for (var n = i > 1 ? void 0 : i ? wr(t, r) : t, s = e.length - 1, o; s >= 0; s--) (o = e[s]) && (n = (i ? o(t, r, n) : o(n)) || n);
+  return i && n && mr(t, r, n), n;
+};
+let vt = class extends k {
+  constructor() {
+    super(), this.count = 0, this.originalConsoleError = console.error, this.overrideConsoleError(), this.attachGlobalListeners();
+  }
+  overrideConsoleError() {
+    console.error = (...e) => {
+      this.incrementCount(), this.originalConsoleError.apply(console, e);
+    };
+  }
+  attachGlobalListeners() {
+    window.addEventListener("error", () => this.incrementCount()), window.addEventListener("unhandledrejection", () => this.incrementCount());
+  }
+  incrementCount() {
+    this.count += 1, document.dispatchEvent(new CustomEvent(W.plugin.icon.update, {
+      detail: {
+        id: "pandora-tracer",
+        icon: `<span>${this.count}</span>`
+      },
+      bubbles: !0
+    }));
+  }
+  render() {
+    return $`<div class="text-white">Console Errors: ${this.count}</div>`;
+  }
+};
+ie([qt()], vt.prototype, "count", 2);
+vt = ie([M("pandora-tracer")], vt);
+customElements.whenDefined(S).then(() => {
+  customElements.get(S).registerPlugin({
+    id: "pandora-tracer",
+    label: "Tracer",
+    element: "<pandora-tracer />",
+    icon: '<svg viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.98057 3.51791C6.39094 3.51791 5.81456 3.69275 5.3243 4.02033C4.83404 4.34792 4.45193 4.81352 4.22629 5.35827C4.00064 5.90301 3.94161 6.50244 4.05664 7.08074C4.17167 7.65904 4.4556 8.19024 4.87253 8.60717C5.28946 9.0241 5.82067 9.30804 6.39897 9.42307C6.97727 9.5381 7.57669 9.47906 8.12144 9.25342C8.66619 9.02778 9.13179 8.64567 9.45937 8.15541C9.78695 7.66515 9.9618 7.08876 9.9618 6.49913C9.96097 5.70871 9.64662 4.9509 9.08771 4.392C8.5288 3.83309 7.77099 3.51873 6.98057 3.51791ZM6.98057 8.48661C6.58749 8.48661 6.20323 8.37005 5.87639 8.15166C5.54955 7.93327 5.29481 7.62287 5.14438 7.25971C4.99395 6.89654 4.9546 6.49692 5.03128 6.11139C5.10797 5.72586 5.29726 5.37172 5.57521 5.09377C5.85317 4.81581 6.2073 4.62652 6.59284 4.54984C6.97837 4.47315 7.37799 4.51251 7.74115 4.66294C8.10431 4.81336 8.41472 5.0681 8.6331 5.39494C8.85149 5.72178 8.96806 6.10604 8.96806 6.49913C8.96806 7.02624 8.75866 7.53176 8.38594 7.90449C8.01321 8.27722 7.50769 8.48661 6.98057 8.48661ZM12.4461 6.63328C12.4486 6.54385 12.4486 6.45441 12.4461 6.36497L13.3728 5.20727C13.4214 5.14648 13.455 5.07513 13.471 4.99897C13.487 4.92281 13.4848 4.84396 13.4647 4.76878C13.3128 4.19775 13.0856 3.64949 12.789 3.13842C12.7502 3.07154 12.6962 3.01465 12.6315 2.97228C12.5669 2.9299 12.4932 2.90321 12.4163 2.89434L10.9431 2.73037C10.8818 2.66578 10.8197 2.60367 10.7568 2.54404L10.5829 1.0671C10.5739 0.990213 10.5472 0.916483 10.5047 0.851784C10.4622 0.787085 10.4052 0.733206 10.3382 0.694443C9.82692 0.3984 9.2787 0.171384 8.70782 0.0193209C8.63259 -0.00068005 8.55371 -0.00272573 8.47755 0.0133487C8.40139 0.0294231 8.33006 0.0631679 8.26933 0.111863L7.11473 1.03356C7.02529 1.03356 6.93586 1.03356 6.84642 1.03356L5.68871 0.108758C5.62793 0.0601688 5.55658 0.0265366 5.48042 0.0105705C5.40425 -0.00539564 5.32541 -0.0032494 5.25022 0.0168365C4.67929 0.16902 4.13106 0.396249 3.61987 0.69258C3.55299 0.731414 3.4961 0.785324 3.45372 0.850019C3.41135 0.914713 3.38466 0.988406 3.37578 1.06523L3.21181 2.54094C3.14722 2.60263 3.08511 2.66474 3.02549 2.72726L1.54854 2.89682C1.47166 2.90577 1.39793 2.93255 1.33323 2.97503C1.26853 3.01752 1.21465 3.07453 1.17589 3.14153C0.879845 3.65279 0.65283 4.20101 0.500766 4.77188C0.480765 4.84711 0.47872 4.92599 0.494794 5.00215C0.510868 5.07832 0.544613 5.14964 0.593308 5.21037L1.515 6.36497C1.515 6.45441 1.515 6.54385 1.515 6.63328L0.590203 7.79099C0.541614 7.85178 0.507982 7.92312 0.492016 7.99929C0.47605 8.07545 0.478196 8.1543 0.498282 8.22948C0.650193 8.80051 0.877437 9.34877 1.17403 9.85983C1.21286 9.92671 1.26677 9.98361 1.33146 10.026C1.39616 10.0684 1.46985 10.095 1.54668 10.1039L3.0199 10.2679C3.08159 10.3325 3.1437 10.3946 3.20622 10.4542L3.37827 11.9312C3.38721 12.008 3.41399 12.0818 3.45648 12.1465C3.49896 12.2112 3.55598 12.2651 3.62297 12.3038C4.13423 12.5999 4.68245 12.8269 5.25333 12.9789C5.32856 12.9989 5.40743 13.001 5.4836 12.9849C5.55976 12.9688 5.63109 12.9351 5.69182 12.8864L6.84642 11.9647C6.93586 11.9672 7.02529 11.9672 7.11473 11.9647L8.27244 12.8914C8.33322 12.94 8.40457 12.9736 8.48073 12.9896C8.5569 13.0055 8.63574 13.0034 8.71093 12.9833C9.28195 12.8314 9.83022 12.6041 10.3413 12.3075C10.4082 12.2687 10.4651 12.2148 10.5074 12.1501C10.5498 12.0854 10.5765 12.0117 10.5854 11.9349L10.7493 10.4617C10.8139 10.4004 10.876 10.3383 10.9357 10.2753L12.4126 10.1014C12.4895 10.0925 12.5632 10.0657 12.6279 10.0232C12.6926 9.98074 12.7465 9.92373 12.7853 9.85673C13.0813 9.34547 13.3083 8.79725 13.4604 8.22637C13.4804 8.15114 13.4824 8.07227 13.4664 7.9961C13.4503 7.91994 13.4165 7.84862 13.3678 7.78789L12.4461 6.63328ZM11.4462 6.22958C11.4568 6.40912 11.4568 6.58913 11.4462 6.76868C11.4388 6.89161 11.4773 7.0129 11.5543 7.10904L12.4356 8.21023C12.3345 8.53162 12.205 8.84339 12.0487 9.14186L10.645 9.30086C10.5228 9.31443 10.4099 9.37285 10.3282 9.46482C10.2087 9.59928 10.0813 9.72662 9.94689 9.84617C9.85491 9.92782 9.79649 10.0407 9.78292 10.1629L9.62703 11.5653C9.3286 11.7217 9.01682 11.8512 8.6954 11.9523L7.59359 11.071C7.50542 11.0005 7.3959 10.9622 7.28304 10.9623H7.25323C7.07369 10.9728 6.89367 10.9728 6.71413 10.9623C6.5912 10.9549 6.46991 10.9934 6.37377 11.0703L5.26948 11.9523C4.94809 11.8512 4.63632 11.7217 4.33785 11.5653L4.17885 10.1635C4.16528 10.0413 4.10686 9.92844 4.01488 9.84679C3.88042 9.72724 3.75309 9.5999 3.63353 9.46544C3.55188 9.37347 3.43902 9.31505 3.31678 9.30148L1.91436 9.14496C1.75797 8.84653 1.62848 8.53475 1.52742 8.21333L2.40875 7.11152C2.4857 7.01538 2.52422 6.89409 2.51682 6.77117C2.50626 6.59162 2.50626 6.41161 2.51682 6.23206C2.52422 6.10914 2.4857 5.98785 2.40875 5.89171L1.52742 4.78803C1.62855 4.46664 1.75804 4.15487 1.91436 3.8564L3.31616 3.6974C3.4384 3.68383 3.55126 3.62541 3.63291 3.53344C3.75247 3.39898 3.8798 3.27164 4.01426 3.15209C4.1066 3.07038 4.16526 2.95726 4.17885 2.83471L4.33474 1.43292C4.63318 1.27652 4.94495 1.14703 5.26637 1.04598L6.36818 1.9273C6.46432 2.00426 6.58561 2.04277 6.70854 2.03537C6.88808 2.02481 7.0681 2.02481 7.24764 2.03537C7.37057 2.04277 7.49186 2.00426 7.588 1.9273L8.69167 1.04598C9.01306 1.14711 9.32483 1.2766 9.6233 1.43292L9.7823 2.83471C9.79587 2.95695 9.85429 3.06981 9.94627 3.15147C10.0807 3.27102 10.2081 3.39835 10.3276 3.53281C10.4093 3.62479 10.5221 3.68321 10.6444 3.69678L12.0468 3.85267C12.2032 4.15111 12.3327 4.46289 12.4337 4.78431L11.5524 5.88612C11.4747 5.98307 11.4361 6.10561 11.4443 6.22958H11.4462Z" fill="currentColor"/></svg>'
+  });
+});
 export {
-  ht as PandoraAppLogo,
+  gt as PandoraAppLogo,
   Ut as PandoraInstaller,
-  gt as PandoraLink,
+  Ct as PandoraLink,
   et as PandoraNote,
-  Ct as PandoraTracer,
+  vt as PandoraTracer,
   w as PandorasBox
 };
 //# sourceMappingURL=index.js.map

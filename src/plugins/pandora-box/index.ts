@@ -21,6 +21,7 @@ export class PandorasBox extends TwLitElement {
     if (!PandorasBox.plugins.find((plugin) => plugin.id === newPlugin.id)) {
       PandorasBox.plugins.push(newPlugin);
       const rootElm = document.querySelector(PANDORA_ELEMENT_IDENTIFIER) as any;
+      if (!rootElm) return;
 
       if (newPlugin.hooks) {
         const { onReady } = newPlugin.hooks;
@@ -38,6 +39,7 @@ export class PandorasBox extends TwLitElement {
       (plugin) => plugin.id !== toDeletePlugin.id
     );
     const rootElm = document.querySelector(PANDORA_ELEMENT_IDENTIFIER) as any;
+    if (!rootElm) return;
     rootElm.requestUpdate();
   }
 
