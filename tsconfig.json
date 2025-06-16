@@ -21,7 +21,7 @@
     "useDefineForClassFields": false,
     "types": ["vite/client"],
     "skipLibCheck": true,
-    "jsx": "preserve"
+    "jsx": "react-jsx"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

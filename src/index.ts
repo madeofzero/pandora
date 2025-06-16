@@ -1,1 +1,1 @@
-export * from "@/plugins";
+export * from "./web/index";

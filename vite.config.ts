@@ -15,7 +15,6 @@ function addJsExtensionPlugin() {
     generateBundle(_, bundle) {
       for (const file of Object.values(bundle) as any) {
         if (file.type === "chunk") {
-          // Replace import statements without extensions with .js
           file.code = file.code.replace(
             /import(\s+[^'"]+from\s+['"])([^'".]+)(?<!\.js)['"]/g,
             (match, importPart, path) => {
@@ -30,34 +29,47 @@ function addJsExtensionPlugin() {
     },
   };
 }
-
 export default defineConfig(({ command }) => {
   const isBuild = command === "build";
 
   return {
     root: ".",
-    plugins: [tsconfigPaths(), dts({ rollupTypes: true }), tailwindcss()],
+    plugins: [
+      tsconfigPaths(),
+      tailwindcss(),
+      dts({
+        outDir: "dist",
+        include: ["src/web"],
+        rollupTypes: true,
+      }),
+    ],
     build: {
       sourcemap: true,
       target: "es2021",
       outDir: "dist",
-      lib: {
-        entry: resolve(__dirname, "src/index.ts"),
-        name: "PandoraBox",
-        fileName: () => `index.js`,
-        formats: ["es"],
-      },
+      lib: false,
       rollupOptions: {
+        input: {
+          web: resolve(__dirname, "src/web/index.ts"),
+        },
+        output: [
+          {
+            format: "es",
+            dir: "dist",
+            entryFileNames: "[name]/index.js",
+            chunkFileNames: "shared/[name]-[hash].js",
+          },
+        ],
+        external: [],
         plugins: [
           nodeResolve({
             extensions: [".js", ".ts"],
           }),
-          // Babel only for build step (not for dev server)
           isBuild &&
             babel({
               babelHelpers: "bundled",
-              extensions: [".ts", ".tsx", ".js", ".jsx"],
-              include: ["src/**/*"],
+              extensions: [".ts", ".js"],
+              include: ["src/web/**/*"],
             }),
           addJsExtensionPlugin(),
         ].filter(Boolean),

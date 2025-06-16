@@ -1,8 +1,8 @@
-import { createPlugin } from "@/api/plugins-api";
-import { PANDORA_EVENTS } from "@/types/pandora-event.type";
-import { PandoraPluginType } from "@/types/pandora-plugin.type";
-import { PandoraState } from "@/utils/state";
-import { TwLitElement } from "@/utils/tailwindMixin";
+import { createPlugin } from "@/web/api/plugins-api";
+import { PANDORA_EVENTS } from "@/web/types/pandora-event.type";
+import { PandoraPluginType } from "@/web/types/pandora-plugin.type";
+import { PandoraState } from "@/web/utils/state";
+import { TwLitElement } from "@/web/utils/tailwindMixin";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

@@ -1,6 +1,6 @@
-import { PANDORA_EVENTS } from "@/types/pandora-event.type";
-import { PANDORA_ELEMENT_IDENTIFIER } from "@/types/pandora-plugin.type";
-import { TwLitElement } from "@/utils/tailwindMixin";
+import { PANDORA_EVENTS } from "@/web/types/pandora-event.type";
+import { PANDORA_ELEMENT_IDENTIFIER } from "@/web/types/pandora-plugin.type";
+import { TwLitElement } from "@/web/utils/tailwindMixin";
 import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 

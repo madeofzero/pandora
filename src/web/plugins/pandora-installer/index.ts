@@ -1,8 +1,8 @@
-import { TwLitElement } from "@/utils/tailwindMixin";
+import { TwLitElement } from "@/web/utils/tailwindMixin";
 import { html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { log } from "@/utils/logger";
-import { PANDORA_ELEMENT_IDENTIFIER } from "@/types/pandora-plugin.type";
+import { log } from "@/web/utils/logger";
+import { PANDORA_ELEMENT_IDENTIFIER } from "@/web/types/pandora-plugin.type";
 
 @customElement("pandora-installer")
 export class PandoraInstaller extends TwLitElement {

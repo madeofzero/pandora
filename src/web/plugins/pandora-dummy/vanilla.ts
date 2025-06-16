@@ -1,5 +1,5 @@
-import { PANDORA_ELEMENT_IDENTIFIER } from "@/types/pandora-plugin.type";
-import { log } from "@/utils/logger";
+import { PANDORA_ELEMENT_IDENTIFIER } from "@/web/types/pandora-plugin.type";
+import { log } from "@/web/utils/logger";
 
 function clickable() {
   alert("Button clicked inside Dummy Plugin!");

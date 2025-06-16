@@ -1,14 +1,14 @@
-import { TwLitElement } from "@/utils/tailwindMixin";
+import { TwLitElement } from "@/web/utils/tailwindMixin";
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import { PandoraState } from "@/utils/state";
+import { PandoraState } from "@/web/utils/state";
 import {
   PANDORA_ELEMENT_IDENTIFIER,
   PandoraPluginType,
-} from "@/types/pandora-plugin.type";
-import { fetchPlugins } from "@/api/plugins-api";
-import { PANDORA_EVENTS } from "@/types/pandora-event.type";
+} from "@/web/types/pandora-plugin.type";
+import { fetchPlugins } from "@/web/api/plugins-api";
+import { PANDORA_EVENTS } from "@/web/types/pandora-event.type";
 
 @customElement(PANDORA_ELEMENT_IDENTIFIER)
 export class PandorasBox extends TwLitElement {

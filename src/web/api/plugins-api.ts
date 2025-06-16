@@ -1,5 +1,5 @@
+import { SERVER_URL } from "@/web/api";
 // TODO: Figure out auth
-import { SERVER_URL } from "@/api";
 
 export async function fetchPlugins(siteId: string) {
   if (siteId.length <= 0) {

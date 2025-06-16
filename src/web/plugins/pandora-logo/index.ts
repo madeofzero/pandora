@@ -1,4 +1,4 @@
-import { TwLitElement } from "@/utils/tailwindMixin";
+import { TwLitElement } from "@/web/utils/tailwindMixin";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

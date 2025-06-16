@@ -6,6 +6,16 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./web": {
+      "import": "./dist/web/index.js",
+      "types": "./dist/web/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -20,6 +30,11 @@
     "debugging",
     "floating tool"
   ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "author": "madeofzero",
   "license": "MIT",
   "description": "Pandora is a lightweight, extensible floating dev panel that sticks to the bottom of your screen and gives you quick access to the tools you wish your framework shipped with.",
@@ -27,6 +42,7 @@
     "@lit-labs/signals": "^0.1.2",
     "lit": "3.3.0"
   },
+  "peerDependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.27.2",
     "@babel/core": "^7.27.4",
